@@ -15,7 +15,7 @@ public class Demo1 {
 
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         //2、创建连接
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "123123");
         //3、得到执行sql语句的Statement对象
         Statement stmt = conn.createStatement();
         //4、执行sql语句，并返回结果
