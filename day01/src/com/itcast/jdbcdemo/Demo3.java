@@ -15,7 +15,7 @@ public class Demo3 {
     @Test
     public void testSelect() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "123123");
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("select password,email,birthday,id,name from users");
         List<User> list = new ArrayList<User>();
@@ -40,7 +40,7 @@ public class Demo3 {
     @Test
     public void testSelect1() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "123123");
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("select password,email,birthday,id,name from users");
         List<User> list = new ArrayList<User>();

@@ -15,7 +15,7 @@ public class Demo2 {
 
         Class.forName("com.mysql.jdbc.Driver");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", "root", "123123");
 
         Statement stmt = conn.createStatement();
 
@@ -42,7 +42,7 @@ public class Demo2 {
 
         Properties info = new Properties();
         info.setProperty("user", "root");
-        info.setProperty("password", "root");
+        info.setProperty("password", "123123");
 
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01", info);
 
