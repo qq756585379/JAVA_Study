@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>day04</display-name>
+    <servlet>
+        <servlet-name>ServletDemo1</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo2</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo3</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo4</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo4</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo5</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo5</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo6</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo6</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo7</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo7</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo8</servlet-name>
+        <servlet-class>com.itheima.servlet.ServletDemo8</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletDemo1</servlet-name>
+        <url-pattern>/servlet/demo1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo2</servlet-name>
+        <url-pattern>/servlet/demo2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo3</servlet-name>
+        <url-pattern>/servlet/demo3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo4</servlet-name>
+        <url-pattern>/servlet/demo4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo5</servlet-name>
+        <url-pattern>/servlet/demo5</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo6</servlet-name>
+        <url-pattern>/servlet/demo6</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo7</servlet-name>
+        <url-pattern>/servlet/demo7</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo8</servlet-name>
+        <url-pattern>/servlet/demo8</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

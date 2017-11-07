@@ -6,6 +6,12 @@
 
     <display-name>day03</display-name>
 
+    <!-- 配置当前应用的全局信息 -->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+
     <!-- 创建一个Servlet实例 -->
     <servlet>
         <servlet-name>servletDemo1</servlet-name>
@@ -13,48 +19,22 @@
         <!-- 数值越小优先级越高，不能为0 -->
         <load-on-startup>2</load-on-startup>
     </servlet>
-    <!-- 给Servlet提供（映射）一个可供客户端访问的URI -->
-    <servlet-mapping>
-        <servlet-name>servletDemo1</servlet-name>
-        <url-pattern>/demo1</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>servletDemo2</servlet-name>
         <servlet-class>com.itcast.servlet.ServletDemo2</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>servletDemo2</servlet-name>
-        <url-pattern>/demo2</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>servletDemo3</servlet-name>
         <servlet-class>com.itcast.servlet.ServletDemo3</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>servletDemo3</servlet-name>
-        <url-pattern>/demo3</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>servletDemo4</servlet-name>
         <servlet-class>com.itcast.servlet.ServletDemo4</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>servletDemo4</servlet-name>
-        <url-pattern>/demo4</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>servletDemo5</servlet-name>
         <servlet-class>com.itcast.servlet.ServletDemo5</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>servletDemo5</servlet-name>
-        <url-pattern>/demo5</url-pattern>
-    </servlet-mapping>
-
     <servlet>
         <servlet-name>ServletConfigDemo1</servlet-name>
         <servlet-class>com.itcast.ServletConfig.ServletConfig</servlet-class>
@@ -63,9 +43,83 @@
             <param-value>GBK</param-value>
         </init-param>
     </servlet>
+
+
+    <!-- 给Servlet提供（映射）一个可供客户端访问的URI -->
+    <servlet-mapping>
+        <servlet-name>servletDemo1</servlet-name>
+        <url-pattern>/demo1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletDemo2</servlet-name>
+        <url-pattern>/demo2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletDemo3</servlet-name>
+        <url-pattern>/demo3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletDemo4</servlet-name>
+        <url-pattern>/demo4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletDemo5</servlet-name>
+        <url-pattern>/demo5</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletConfigDemo1</servlet-name>
         <url-pattern>/servlet/scd1</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ServletContext1</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletContext2</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletContext3</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletContext4</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo4</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletContext5</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo5</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletContext6</servlet-name>
+        <servlet-class>com.itcast.servletContext.ServletDemo6</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletContext1</servlet-name>
+        <url-pattern>/ServletContext/demo1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletContext2</servlet-name>
+        <url-pattern>/ServletContext/demo2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletContext3</servlet-name>
+        <url-pattern>/ServletContext/demo3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletContext4</servlet-name>
+        <url-pattern>/ServletContext/demo4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletContext5</servlet-name>
+        <url-pattern>/ServletContext/demo5</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletContext6</servlet-name>
+        <url-pattern>/ServletContext/demo6</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
