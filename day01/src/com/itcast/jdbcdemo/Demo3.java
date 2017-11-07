@@ -96,7 +96,6 @@ public class Demo3 {
         conn.close();
     }
 
-
     @Test
     public void testDelete() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
