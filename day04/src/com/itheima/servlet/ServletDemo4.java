@@ -20,16 +20,18 @@ public class ServletDemo4 extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //控制客户端不要缓存
+        //控制客户端不要缓存,不然随机验证码就不会变
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Cache-Control", "no-cache");
         response.setIntHeader("Expires", 0);
 
+        //http://localhost:8080/day04/login.html
         //使用第三方jar
-//        ValidateCode vc = new ValidateCode(110, 25, 4, 9);
-//        String code = vc.getCode();
-//        vc.write(response.getOutputStream());
-        test1(response);
+        ValidateCode vc = new ValidateCode(110, 25, 4, 9);
+        vc.write(response.getOutputStream());
+
+        //不使用第三方样式比较丑
+//        test1(response);
     }
 
     private void test1(HttpServletResponse response) throws IOException {
@@ -44,7 +46,7 @@ public class ServletDemo4 extends HttpServlet {
         g.setColor(Color.RED);
         g.drawRect(0, 0, width - 1, height - 1);
         g.setColor(Color.BLUE);
-        g.setFont(new Font("����", Font.BOLD | Font.ITALIC, 15));
+        g.setFont(new Font("宋体", Font.BOLD | Font.ITALIC, 15));
 
         Random rand = new Random();
         int position = 20;

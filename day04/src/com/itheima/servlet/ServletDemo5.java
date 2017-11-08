@@ -14,15 +14,19 @@ public class ServletDemo5 extends HttpServlet {
 			throws ServletException, IOException {
 		
 		response.setContentType("text/html;charset=UTF-8");
-		/*response.setIntHeader("refresh", 1);//ÉèÖÃ1ÃëÖÓË¢ĞÂÒ»´Î
-		
+
+		/*
+		 * http://localhost:8080/day04/servlet/demo5
+		 */
+
+		/*
+		response.setIntHeader("refresh", 1);// ä¸€ç§’åˆ·æ–°ä¸€æ¬¡
 		Random r = new Random();
+		response.getWriter().write(r.nextInt()+"");
+		*/
 		
-		response.getWriter().write(r.nextInt()+"");*/
-		
-		response.getWriter().write("×¢²á³É¹¦£¡3ÃëÖÓÌøµ½Ö÷Ò³");
-		//ÉèÖÃ3ÃëÖÓÌø×ª
-		response.setHeader("refresh", "3;url=/day09_00_HttpServletResponse/servlet/demo6");
+		response.getWriter().write("æ³¨å†ŒæˆåŠŸï¼Œ3ç§’åè·³è½¬ä¸»é¡µ");
+		response.setHeader("refresh", "3;url=/day04/servlet/demo6");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

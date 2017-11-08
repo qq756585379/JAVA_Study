@@ -11,7 +11,8 @@ public class ServletDemo8 extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("ÎÒÓÐÇ®£¬ÎÒ½èÄã£¡");
+
+		System.out.println("æˆ‘æœ‰é’±");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

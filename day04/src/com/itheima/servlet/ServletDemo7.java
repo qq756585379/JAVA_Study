@@ -11,18 +11,16 @@ public class ServletDemo7 extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("A:ÎÒÒª½èÇ®£¡");
-		System.out.println("B:ÎÒ²»ÓĞ£¬µ«ÊÇÎÒ¿ÉÒÔ¸æËßÄãË­ÓĞ");
-		/*//¸æËß¿Í»§¶ËÒªÖØĞÂ¶¨ÏòĞÂµÄ×ÊÔ´
-		response.setStatus(302);
-		//¸æËßä¯ÀÀÆ÷ÒªÈ¥·ÃÎÊÄÄ¸öURL
-		response.setHeader("location", "/day09_00_HttpServletResponse/servlet/demo8");*/
-		
-		//ÇëÇóÖØ¶¨Ïò
-		response.sendRedirect("/day09_00_HttpServletResponse/servlet/demo8");
-		
-		System.out.println("A: ÎÒÈ¥ÁË");
-		
+
+		System.out.println("A:æˆ‘è¦å€Ÿé’±");
+		System.out.println("B:æˆ‘æ²¡æœ‰ï¼Œä½†æ˜¯æˆ‘å¯ä»¥å‘Šè¯‰ä½ è°æœ‰");
+
+//		response.setStatus(302);//å‘ŠçŸ¥å®¢æˆ·ç«¯è¦é‡æ–°å®šå‘
+//		response.setHeader("location", "/day04/servlet/demo8");
+
+		//è¯·æ±‚é‡å®šå‘
+		response.sendRedirect("/day04/servlet/demo8");
+		System.out.println("A: æˆ‘å»äº†");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

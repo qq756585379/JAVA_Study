@@ -11,6 +11,7 @@ public class ServletDemo6 extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		response.getWriter().write("i'm homePage!");
 	}
 
