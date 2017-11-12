@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <session-config>
+        <!-- 设置session的有效时间，单位是分钟 -->
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+    <display-name>day06</display-name>
+
+    <servlet>
+        <servlet-name>CookieDemo1</servlet-name>
+        <servlet-class>com.itheima.demo.CookieDemo1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CookieDemo2</servlet-name>
+        <servlet-class>com.itheima.demo.CookieDemo2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ClearServlet</servlet-name>
+        <servlet-class>com.itheima.demo.ClearServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.itheima.login.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoLoginServlet</servlet-name>
+        <servlet-class>com.itheima.login.DoLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowAllBooksServlet</servlet-name>
+        <servlet-class>com.itheima.history.ShowAllBooksServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowBookDetail</servlet-name>
+        <servlet-class>com.itheima.history.ShowBookDetail</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CookieDemo1</servlet-name>
+        <url-pattern>/servlet/ck1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookieDemo2</servlet-name>
+        <url-pattern>/servlet/ck2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClearServlet</servlet-name>
+        <url-pattern>/servlet/clear</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/servlet/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoLoginServlet</servlet-name>
+        <url-pattern>/servlet/doLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowAllBooksServlet</servlet-name>
+        <url-pattern>/servlet/showAllBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowBookDetail</servlet-name>
+        <url-pattern>/servlet/showBookDetail</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SessionDemo1</servlet-name>
+        <servlet-class>com.itheima.servlet.SessionDemo1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SessionDemo2</servlet-name>
+        <servlet-class>com.itheima.servlet.SessionDemo2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartShowAllBooksServlet</servlet-name>
+        <servlet-class>com.itheima.cart.ShowAllBooksServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCart</servlet-name>
+        <servlet-class>com.itheima.cart.AddCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowCart</servlet-name>
+        <servlet-class>com.itheima.cart.ShowCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CodeServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.CodeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoLogin</servlet-name>
+        <servlet-class>com.itheima.servlet.DoLogin</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>SessionDemo1</servlet-name>
+        <url-pattern>/servlet/sessionDemo1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionDemo2</servlet-name>
+        <url-pattern>/servlet/sessionDemo2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartShowAllBooksServlet</servlet-name>
+        <url-pattern>/servlet/showAllBooksServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCart</servlet-name>
+        <url-pattern>/servlet/addCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowCart</servlet-name>
+        <url-pattern>/servlet/showCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CodeServlet</servlet-name>
+        <url-pattern>/servlet/codeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoLogin</servlet-name>
+        <url-pattern>/servlet/DoLogin</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
