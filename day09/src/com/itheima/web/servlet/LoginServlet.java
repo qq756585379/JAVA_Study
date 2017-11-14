@@ -29,8 +29,8 @@ public class LoginServlet extends HttpServlet {
         }
 
         UserService us = new UserServiceImpl();
-
         User u;
+
         try {
             u = us.login(user);
 
@@ -38,14 +38,11 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("u", user);
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
-
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             }
         } catch (UsersException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)

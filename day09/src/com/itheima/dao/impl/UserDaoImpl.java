@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
 
         try {
             conn = DBUtils.getConnection();
-            ps = conn.prepareStatement("INSERT INTO users(username,PASSWORD,email,birthday) VALUES(?,?,?,?)");
+            ps = conn.prepareStatement("INSERT INTO users(username,password,email,birthday) VALUES(?,?,?,?)");
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getEmail());
@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
             int i = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("���ʧ�ܣ�");
+            throw new RuntimeException("xxxxxxxxx");
         } finally {
             DBUtils.closeAll(null, ps, conn);
         }
@@ -71,7 +71,7 @@ public class UserDaoImpl implements UserDao {
 
         try {
             conn = DBUtils.getConnection();
-            ps = conn.prepareStatement("select * from users where username=?");
+            ps = conn.prepareStatement("select * from users where name=?");
             ps.setString(1, name);
 
             rs = ps.executeQuery();

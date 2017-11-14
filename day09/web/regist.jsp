@@ -12,6 +12,7 @@
 </head>
 <body>
 
+${msg }
 <form action="${pageContext.request.contextPath }/servlet/regServlet" method="post">
     用户名：<input type="text" name="username" value="${uf.username }"/>${uf.msg.username }${error }<br/>
     密码：<input type="password" name="password"/>${uf.msg.password }<br/>
