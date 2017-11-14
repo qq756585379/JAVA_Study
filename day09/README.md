@@ -1,10 +1,11 @@
 ## 1、创建数据库表，并向表中添加测试数据
 ```
+这里使用了day01的数据库表，不需要再新建表
 终端登录数据库，末尾不要加分号;
 mysql -h localhost -u root -p123123
 
-Create database day09 character set utf8 collate utf8_general_ci;
-use day09;
+Create database day01 character set utf8 collate utf8_general_ci;
+use day01;
 
 create table users(
 	id int primary key auto_increment,

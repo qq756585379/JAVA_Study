@@ -29,7 +29,7 @@
 </c:if>
 
 <c:if test="${not empty u }">
-    欢迎你：${u.username } <a href="${pageContext.request.contextPath }/servlet/loginOutServlet">注消</a>
+    欢迎你：${u.name } <a href="${pageContext.request.contextPath }/servlet/loginOutServlet">注消</a>
 </c:if>
 
 </body>

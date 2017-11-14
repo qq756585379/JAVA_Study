@@ -42,7 +42,7 @@ public class RegServlet extends HttpServlet {
 
         User user = new User();
         try {
-            /*
+            /* 原始方式
              * ConvertUtils.register(new Converter() {
 			 * public Object convert(Class type, Object value) {
 			 * Date date1 = null;
@@ -59,18 +59,20 @@ public class RegServlet extends HttpServlet {
 			 * }, Date.class);
 			 */
 
+            //注册类型转换器
             ConvertUtils.register(new DateLocaleConverter(), Date.class);
             BeanUtils.populate(user, request.getParameterMap());
             UserService us = new UserServiceImpl();
-            boolean isExist = us.findUserByName(user.getUsername());
-            if (isExist){
-
-            }else{
-
+            boolean isExist = us.findUserByName(user.getName());
+            if (isExist) {
+                //此处不需要做判断，因为在UserServiceImpl 里 throw new UserExistException("user has exit");
+                request.setAttribute("error", "该用户已经存在");
+                request.getRequestDispatcher("/regist.jsp").forward(request, response);
+            } else {
+                us.register(user);
             }
-            us.register(user);
         } catch (UserExistException e) {
-            request.setAttribute("error", "error-------xxxxx");
+            request.setAttribute("error", "该用户已经存在");
             request.getRequestDispatcher("/regist.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

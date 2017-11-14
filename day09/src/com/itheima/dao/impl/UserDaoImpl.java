@@ -18,8 +18,8 @@ public class UserDaoImpl implements UserDao {
 
         try {
             conn = DBUtils.getConnection();
-            ps = conn.prepareStatement("INSERT INTO users(username,password,email,birthday) VALUES(?,?,?,?)");
-            ps.setString(1, user.getUsername());
+            ps = conn.prepareStatement("INSERT INTO users(name,password,email,birthday) VALUES(?,?,?,?)");
+            ps.setString(1, user.getName());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getEmail());
 
@@ -44,14 +44,14 @@ public class UserDaoImpl implements UserDao {
         try {
             conn = DBUtils.getConnection();
             ps = conn.prepareStatement("select * from users where name=? and password=?");
-            ps.setString(1, user.getUsername());
+            ps.setString(1, user.getName());
             ps.setString(2, user.getPassword());
 
             rs = ps.executeQuery();
             if (rs.next()) {
                 u = new User();
                 u.setId(rs.getInt(1));
-                u.setUsername(rs.getString(2));
+                u.setName(rs.getString(2));
                 u.setPassword(rs.getString(3));
                 u.setEmail(rs.getString(4));
                 u.setBirthday(rs.getDate(5));

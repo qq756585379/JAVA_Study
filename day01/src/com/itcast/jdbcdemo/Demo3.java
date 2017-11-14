@@ -45,12 +45,10 @@ public class Demo3 {
         ResultSet rs = stmt.executeQuery("select password,email,birthday,id,name from users");
         List<User> list = new ArrayList<User>();
 
-
         rs.afterLast();//将光标移动到末尾，正好位于最后一行之后。
         rs.previous();
         rs.beforeFirst();//将光标移动到开头，正好位于第一行之前。
         rs.absolute(2);//参数是当前行的索引，从1开始	根据行的索引定位移动的指定索引行。
-
 
         //while(rs.next()){
         User u = new User();

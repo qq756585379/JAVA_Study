@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <!-- 配置当前应用的全局信息见day03 -->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+
     <display-name>day09</display-name>
 
     <servlet>
@@ -13,10 +19,16 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.LoginServlet</servlet-class>
+        <!-- 数值越小优先级越高，不能为0 -->
+        <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>LoginOutServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.LoginOutServlet</servlet-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>

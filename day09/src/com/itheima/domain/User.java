@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable {
+
     private int id;
-    private String username;
+    private String name;
     private String password;
     private String email;
     private Date birthday;
@@ -18,12 +19,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -52,7 +53,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", username=" + username + ", password=" + password
+        return "User [id=" + id + ", name=" + name + ", password=" + password
                 + ", email=" + email + ", birthday=" + birthday + "]";
     }
 

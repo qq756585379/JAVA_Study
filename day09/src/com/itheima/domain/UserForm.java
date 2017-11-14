@@ -8,7 +8,7 @@ import java.util.Map;
 public class UserForm {
 
     private int id;
-    private String username;
+    private String name;
     private String password;
     private String repassword;
     private String email;
@@ -18,10 +18,10 @@ public class UserForm {
 
     public boolean validate() {
 
-        if ("".equals(username)) {
-            msg.put("username", "用户名不能为空");
-        } else if (!username.matches("\\w{3,8}")) {
-            msg.put("username", "用户名为3~8个字符");
+        if ("".equals(name)) {
+            msg.put("name", "用户名不能为空");
+        } else if (!name.matches("\\w{3,8}")) { //此处正则有问题，注册时先不要用中文
+            msg.put("name", "用户名为3~8个字符");
         }
 
         if ("".equals(password)) {
@@ -69,12 +69,12 @@ public class UserForm {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
