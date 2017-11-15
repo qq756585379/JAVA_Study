@@ -3,8 +3,10 @@ package com.itheima.datasource;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -20,21 +22,24 @@ public class MyDataSource implements DataSource {
                 pool.add(conn);
             }
         } catch (Exception e) {
-            throw new ExceptionInInitializerError("��ʼ�����ݿ�����ʧ�ܣ����������ļ��Ƿ���ȷ��");
+            throw new ExceptionInInitializerError("xxxxxxxxxx");
         }
     }
 
     public Connection getConnection() throws SQLException {
         Connection conn = null;
         if (pool.size() > 0) {
-            conn = pool.removeFirst();//�ӳ���ȡ��һ������
-            MyConnection myConn = new MyConnection(conn, pool);//�õ�һ����װ���MyConnection����
+            conn = pool.removeFirst();
+            MyConnection myConn = new MyConnection(conn, pool);
             return myConn;
         } else {
-            //�ȴ�
-            //�´���һ������
-            throw new RuntimeException("������æ������");
+            throw new RuntimeException("yyyyyyyyy");
         }
+    }
+
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
     }
 
     public Connection getConnection(String username, String password)

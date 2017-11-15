@@ -1,32 +1,27 @@
-package com.itheima.datasource;
+package com.itheima.test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
-
 import org.junit.Test;
+
+import com.itheima.utils.DBCPUtil;
 
 public class TestJDBC {
     @Test
     public void test1() {
-
         Connection conn = null;
         PreparedStatement ps = null;
-        DataSource ds = new MyDataSource();
 
         try {
-            conn = ds.getConnection();
-            ps = conn.prepareStatement("..");
+            conn = DBCPUtil.getConnection();
+            ps = conn.prepareStatement("select * from users");
+//            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBCPUtil.release(conn, ps, null);
         }
 
     }

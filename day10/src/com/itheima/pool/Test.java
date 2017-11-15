@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 
 public class Test {
 
+    //没实际开发意义
     public static void main(String[] args) {
         DataSource ds = new MyDataSource();
         Connection conn = null;
@@ -20,8 +21,7 @@ public class Test {
             e.printStackTrace();
         } finally {
             try {
-                conn.close();
-
+                conn.close();//不需要关闭，warper里的包装类可以调用该方法，因为包装内会把连接放回到pool里面
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -33,7 +33,7 @@ public class MyDataSource implements DataSource {
             conn = pool.removeFirst();
             return conn;
         } else {
-            throw new RuntimeException("kkkkkkkkkkkkkk");
+            throw new RuntimeException("服务器繁忙！！！");
         }
     }
 

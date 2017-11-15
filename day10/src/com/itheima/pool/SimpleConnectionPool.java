@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 import com.itheima.util.DBUtils;
 
+//模拟连接池，无实际开发意义
 public class SimpleConnectionPool {
     private static LinkedList<Connection> pool = (LinkedList<Connection>) Collections.synchronizedList(new LinkedList<Connection>());
 
@@ -26,7 +27,7 @@ public class SimpleConnectionPool {
             conn = pool.removeFirst();
             return conn;
         } else {
-            throw new RuntimeException("222222222222222");
+            throw new RuntimeException("服务器忙！！");
         }
 
     }

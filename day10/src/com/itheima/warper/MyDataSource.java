@@ -36,10 +36,11 @@ public class MyDataSource implements DataSource {
         Connection conn = null;
         if (pool.size() > 0) {
             conn = pool.removeFirst();
+            //包装 Connection
             MyConnection myConn = new MyConnection(conn, pool);
             return myConn;
         } else {
-            throw new RuntimeException("yyyyyyyyyy");
+            throw new RuntimeException("服务器繁忙！！！");
         }
     }
 

@@ -18,20 +18,16 @@ import java.sql.Struct;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.Executor;
 
-//1����дһ���࣬ʵ���뱻��װ����ͬ�Ľӿڡ����߱���ͬ����Ϊ��
-//2������һ������װ�����͵ı�����
-//3�����幹�췽�����ѱ���װ��Ķ���ע�룬������װ�������ֵ��
-//4�����ڲ���Ҫ��д�ķ���������ԭ�еķ�����
-//5��������Ҫ��д�ķ�����д�Լ��Ĵ���
 public class MyConnection implements Connection {
 
     private Connection oldConnection;//com.mysql.jdbc.Connection
-    private LinkedList<Connection> pool;//���ӳض���
+    private LinkedList<Connection> pool;
 
     public MyConnection(Connection oldConnection, LinkedList<Connection> pool) {
-        this.oldConnection = oldConnection;//�õ�com.mysql.jdbc.Connection
-        this.pool = pool;//�õ����ӳض���
+        this.oldConnection = oldConnection;//com.mysql.jdbc.Connection
+        this.pool = pool;
     }
 
     public void close() throws SQLException {
@@ -40,6 +36,31 @@ public class MyConnection implements Connection {
 
     public PreparedStatement prepareStatement(String sql) throws SQLException {
         return oldConnection.prepareStatement(sql);
+    }
+
+    @Override
+    public String getSchema() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void setSchema(String schema) throws SQLException {
+
+    }
+
+    @Override
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+
+    }
+
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return 0;
+    }
+
+    @Override
+    public void abort(Executor executor) throws SQLException {
+
     }
 
     public <T> T unwrap(Class<T> iface) throws SQLException {
