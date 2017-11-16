@@ -17,5 +17,9 @@ insert into users(name,password,email,birthday) values('zs','123456','zs@sina.co
 insert into users(name,password,email,birthday) values('lisi','123456','lisi@sina.com','1981-12-04');
 insert into users(name,password,email,birthday) values('wangwu','123456','wangwu@sina.com','1979-12-04');
 
+在上面员工表的基本上增加一个money列。
+ALTER TABLE users ADD money float;
+SHOW CREATE TABLE users;
+
 ```
 

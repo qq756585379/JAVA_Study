@@ -1,4 +1,4 @@
-package com.itheima.utils;
+package com.itheima.util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,8 +10,6 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class C3P0Util {
-
-    //会自动加载c3p0-config.xml
     private static DataSource dataSource = new ComboPooledDataSource();
 
     public static DataSource getDataSource() {
@@ -22,7 +20,7 @@ public class C3P0Util {
         try {
             return dataSource.getConnection();
         } catch (SQLException e) {
-            throw new RuntimeException("服务器忙！！！");
+            throw new RuntimeException("error");
         }
     }
 
@@ -52,5 +50,4 @@ public class C3P0Util {
             conn = null;
         }
     }
-
 }
