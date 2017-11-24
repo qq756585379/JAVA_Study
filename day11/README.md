@@ -19,5 +19,7 @@ insert into users(name,password,email,birthday) values('zs','123456','zs@sina.co
 insert into users(name,password,email,birthday) values('lisi','123456','lisi@sina.com','1981-12-04');
 insert into users(name,password,email,birthday) values('wangwu','123456','wangwu@sina.com','1979-12-04');
 
+update users set password = MD5(password) where id = 1;
+
 ```
 

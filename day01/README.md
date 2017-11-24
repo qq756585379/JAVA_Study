@@ -1,7 +1,10 @@
 # JDBC
 
 ## 1、创建数据库表，并向表中添加测试数据
+
 ```
+mysql -h localhost -u root -p123123
+
 create database day01;
 use day01;
 
@@ -21,5 +24,6 @@ insert into users(name,password,email,birthday) values('wangwu','123456','wangwu
 ALTER TABLE users ADD money float;
 SHOW CREATE TABLE users;
 
+update users set password = MD5(password) where id = 1;
 ```
 
