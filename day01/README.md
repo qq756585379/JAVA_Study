@@ -24,6 +24,7 @@ insert into users(name,password,email,birthday) values('wangwu','123456','wangwu
 ALTER TABLE users ADD money float;
 SHOW CREATE TABLE users;
 
-update users set password = MD5(password) where id = 1;
+update users set password = MD5(123) where id = 1;
+select * from users;
 ```
 

@@ -1,8 +1,9 @@
+<%@ page import="com.itheima.domain.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: yangjun
-  Date: 2017/11/21
-  Time: 下午11:19
+  Date: 2017/11/25
+  Time: 下午6:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,8 +14,7 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-
-    <title>index</title>
+    <title>My JSP 'index.jsp' starting page</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
@@ -24,7 +24,15 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
 </head>
+
 <body>
-This is my JSP page. <br>
+<%
+    //session.invalidate();//使session销毁
+    request.setAttribute("aaa", "tom");
+    request.setAttribute("aaa", "jerry");
+    request.removeAttribute("name");
+    session.setAttribute("u", new User());
+%>
 </body>
+
 </html>

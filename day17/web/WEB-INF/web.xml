@@ -6,5 +6,48 @@
 
     <display-name>autoLogin</display-name>
 
+    <filter>
+        <filter-name>AutoLoginFilter</filter-name>
+        <filter-class>com.itheima.web.filter.AutoLoginFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AutoLoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>com.itheima.web.filter.MyFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.itheima.web.serlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/servlet/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet2</servlet-name>
+        <servlet-class>com.itheima.web.serlet.LoginServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet2</servlet-name>
+        <url-pattern>/servlet/loginServlet2</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
