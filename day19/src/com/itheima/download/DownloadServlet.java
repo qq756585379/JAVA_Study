@@ -5,7 +5,6 @@ import org.apache.commons.io.FilenameUtils;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
@@ -72,7 +71,6 @@ public class DownloadServlet extends HttpServlet {
         sos.close();
         fis.close();
     }
-
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
