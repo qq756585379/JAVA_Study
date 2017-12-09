@@ -13,14 +13,19 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>$Title$</title>
+    <title>首页</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
+    <%--导入css --%>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
 </head>
-<body>
-$END$
+<body class="main">
+
+<%@include file="head.jsp" %>
+<%@include file="menu_search.jsp" %>
+
 </body>
 </html>
