@@ -26,6 +26,6 @@
 
 <%@include file="head.jsp" %>
 <%@include file="menu_search.jsp" %>
-
+<jsp:include page="foot.jsp"/>
 </body>
 </html>

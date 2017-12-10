@@ -1,28 +1,29 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%--
+  Created by IntelliJ IDEA.
+  User: yangjun
+  Date: 2017/12/10
+  Time: 下午11:09
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>bookStore注册页面</title>
-    <%--导入css --%>
+    <title>注册页面</title>
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
     <script type="text/javascript">
         function changeImage() {
-            document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time="
-                + new Date().getTime();
+            document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
         }
     </script>
 </head>
 
 <body class="main">
+
 <%@include file="head.jsp" %>
-<%--导入头 --%>
 <%@include file="menu_search.jsp" %>
-<%--导入导航条与搜索 --%>
 
 <div id="divcontent">
-    <form action="${pageContext.request.contextPath}/register"
-          method="post">
+    <form action="${pageContext.request.contextPath}/register" method="post">
         <table width="850px" border="0" cellspacing="0">
             <tr>
                 <td style="padding:30px">
@@ -76,7 +77,6 @@
 
                     </table>
 
-
                     <h1>注册校验</h1>
                     <table width="80%" border="0" cellspacing="2" class="upline">
                         <tr>
@@ -109,23 +109,21 @@
     </form>
 </div>
 
-
 <div id="divfoot">
     <table width="100%" border="0" cellspacing="0">
         <tr>
-            <td rowspan="2" style="width:10%"><img
-                    src="images/bottomlogo.gif" width="195" height="50"
-                    style="margin-left:175px"/></td>
-            <td style="padding-top:5px; padding-left:50px"><a href="#"><font
-                    color="#747556"><b>CONTACT US</b> </font> </a></td>
+            <td rowspan="2" style="width:10%">
+                <img src="images/bottomlogo.gif" width="195" height="50" style="margin-left:175px"/>
+            </td>
+            <td style="padding-top:5px; padding-left:50px">
+                <a href="#"><font color="#747556"><b>CONTACT US</b> </font> </a>
+            </td>
         </tr>
         <tr>
-            <td style="padding-left:50px"><font color="#CCCCCC"><b>COPYRIGHT
-                2008 &copy; eShop All Rights RESERVED.</b> </font></td>
+            <td style="padding-left:50px"><font color="#CCCCCC"><b>COPYRIGHT 2008 &copy; eShop All Rights RESERVED.</b> </font></td>
         </tr>
     </table>
 </div>
-
 
 </body>
 </html>
