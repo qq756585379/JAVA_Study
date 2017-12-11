@@ -17,11 +17,42 @@
             var xmlhttp = getXMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-
+                    var str = xmlhttp.responseText;//得到服务器返回的数据
+                    var ss = str.split(","); // 把字符串 1001，1002，1003 截成数组
+                    var childDivs = "";
+                    //循环把数据放入小的div中
+                    for(var i=0;i<ss.length;i++){
+                        childDivs += "<div onclick='writeText(this)' " +
+                            "onmouseover='changeBackground_over(this)' " +
+                            "onmouseout='changeBackground_out(this)'>" + ss[i]+
+                            "</div>";
+                    }
+                    div.innerHTML= childDivs;//把多个childDivs（div）放入列表div中
+                    div.style.display="block";//把列表隐藏
                 }
-            }
+            };
+            xmlhttp.open("get","${pageContext.request.contextPath}/servlet/searchBookAJAXServlet?name="+name+"&time="+new Date().getTime());
+            xmlhttp.send(null);
         }
     };
+
+    //鼠标悬浮时，改变背景色
+    function changeBackground_over(div){
+        div.style.backgroundColor = "gray";
+    }
+
+    //鼠标离开时，恢复背景色
+    function changeBackground_out(div){
+        div.style.backgroundColor = "white";
+    }
+
+    //填充文本到搜索框
+    function writeText(div){
+        //得到搜索框
+        var searchElement = document.getElementById("name");
+        searchElement.value = div.innerHTML;//把div中的文本添加到搜索框中
+        div.parentNode.style.display="none";//把context1的div隐藏
+    }
 
     function fillNameValue(subDiv) {
         document.getElementById("name").value = subDiv.innerHTML;
@@ -31,7 +62,7 @@
     function searchName() {
         //2.绑定回调函数
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
                 var jsonObj = eval("(" + xmlhttp.responseText + ")");
                 if (jsonObj.length > 0) {
@@ -43,20 +74,12 @@
                 }
             }
         };
+
         //3.open
         xmlhttp.open("GET", "${pageContext.request.contextPath}/findProductName?name="
             + window.encodeURIComponent(nameValue, "utf-8")
             + "&time=" + new Date().getTime());
-        //4.send
-        xmlhttp.send(null);
-    }
 
-    function changeBackground_over(div) {
-        div.style.background = "gray";
-    }
-
-    function changeBackground_out(div) {
-        div.style.background = "white";
     }
 
 </script>
@@ -86,7 +109,7 @@
                 <td style="text-align:right; padding-right:220px">
                     Search
                     <input type="text" name="name" class="inputtable" id="name" autocomplete="on"/>
-                    <input type="image" src="images/serchbutton.gif" border="0" style="margin-bottom:-4px">
+                    <input type="image" src="images/main/serchbutton.gif" border="0" style="margin-bottom:-4px">
                 </td>
             </tr>
         </table>

@@ -22,7 +22,7 @@ public class C3P0Util {
         try {
             return dataSource.getConnection();
         } catch (SQLException e) {
-            throw new RuntimeException("error");
+            throw new RuntimeException("服务器错误");
         }
     }
 

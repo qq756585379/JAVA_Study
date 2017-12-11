@@ -22,6 +22,14 @@
         <servlet-name>UpdateBookServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.UpdateBookServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchBooksServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.SearchBooksServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchBookAJAXServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.SearchBookAJAXServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>BookListServlet</servlet-name>
@@ -39,9 +47,13 @@
         <servlet-name>UpdateBookServlet</servlet-name>
         <url-pattern>/servlet/updateBookServlet</url-pattern>
     </servlet-mapping>
-
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>SearchBooksServlet</servlet-name>
+        <url-pattern>/servlet/searchBooksServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchBookAJAXServlet</servlet-name>
+        <url-pattern>/servlet/searchBookAJAXServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>

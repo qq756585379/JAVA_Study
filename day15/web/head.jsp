@@ -6,12 +6,11 @@
         <tr>
             <td>
                 <a href="index.jsp">
-                    <img src="${pageContext.request.contextPath }/images/logo.png" width="95" height="30" border="0"/>
+                    <img src="${pageContext.request.contextPath }/images/main/logo.png" width="200" height="60" border="0"/>
                 </a>
             </td>
             <td style="text-align:right">
-                <img src="${pageContext.request.contextPath }/images/cart.gif" width="26" height="23"
-                     style="margin-bottom:-4px"/>&nbsp;
+                <img src="${pageContext.request.contextPath }/images/main/cart.gif" width="26" height="23" style="margin-bottom:-4px"/>&nbsp;
                 <a href="cart.jsp">购物车</a> |
                 <a href="#">帮助中心</a> |
                 <a href="${pageContext.request.contextPath}/myAccount">我的帐户</a>|
