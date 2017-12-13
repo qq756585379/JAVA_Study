@@ -4,13 +4,13 @@
     window.onload = function () {
         //得到搜索框对象
         var searchElement = document.getElementById("name");
-        var div = document.getElementById("context");
+        var contextdiv = document.getElementById("content");
         searchElement.onkeyup = function () {//给文件框注册按键弹起事件
             //获取文本框的值
             var name = this.value;
             //如果文本框没有数据时，把div隐藏，且不向服务器发送请求
             if (name === "") {
-                div.style.display = "none";
+                contextdiv.style.display = "none";
                 return;
             }
             //1.获取XMLHttpRequest对象
@@ -18,6 +18,7 @@
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     var str = xmlhttp.responseText;//得到服务器返回的数据
+                    console.log("xmlhttp.responseText: = " + str);
                     var ss = str.split(","); // 把字符串 1001，1002，1003 截成数组
                     var childDivs = "";
                     //循环把数据放入小的div中
@@ -27,8 +28,8 @@
                             "onmouseout='changeBackground_out(this)'>" + ss[i]+
                             "</div>";
                     }
-                    div.innerHTML= childDivs;//把多个childDivs（div）放入列表div中
-                    div.style.display="block";//把列表隐藏
+                    contextdiv.innerHTML= childDivs;//把多个childDivs（div）放入列表div中
+                    contextdiv.style.display="block";//把列表隐藏
                 }
             };
             xmlhttp.open("get","${pageContext.request.contextPath}/servlet/searchBookAJAXServlet?name="+name+"&time="+new Date().getTime());
@@ -48,38 +49,9 @@
 
     //填充文本到搜索框
     function writeText(div){
-        //得到搜索框
         var searchElement = document.getElementById("name");
         searchElement.value = div.innerHTML;//把div中的文本添加到搜索框中
         div.parentNode.style.display="none";//把context1的div隐藏
-    }
-
-    function fillNameValue(subDiv) {
-        document.getElementById("name").value = subDiv.innerHTML;
-        document.getElementById("content").style.display = "none";
-    }
-
-    function searchName() {
-        //2.绑定回调函数
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-
-                var jsonObj = eval("(" + xmlhttp.responseText + ")");
-                if (jsonObj.length > 0) {
-                    document.getElementById("content").style.display = "block";
-                    for (var i = 0; i < jsonObj.length; i++) {
-                        div.innerHTML += "<div onclick='fillNameValue(this)' onmouseover='changeBackground_over(this)' onmouseout='changeBackground_out(this)'>"
-                            + jsonObj[i] + "</div>"
-                    }
-                }
-            }
-        };
-
-        //3.open
-        xmlhttp.open("GET", "${pageContext.request.contextPath}/findProductName?name="
-            + window.encodeURIComponent(nameValue, "utf-8")
-            + "&time=" + new Date().getTime());
-
     }
 
 </script>
@@ -108,7 +80,7 @@
             <tr>
                 <td style="text-align:right; padding-right:220px">
                     Search
-                    <input type="text" name="name" class="inputtable" id="name" autocomplete="on"/>
+                    <input type="text" name="name" class="inputtable" id="name" autocomplete="off"/>
                     <input type="image" src="images/main/serchbutton.gif" border="0" style="margin-bottom:-4px">
                 </td>
             </tr>
@@ -117,11 +89,6 @@
 </div>
 
 <div id="content" style="background-color:white;width:128px; text-align:left;
-     margin-left:945px;color:black;float:left;margin-top: -20px;display: block">
-    213
+     margin-right:276px;color:black;float:right;margin-top: -20px;display: none">
 </div>
 
-<div id="context1" style="display:block;border:1px solid red;background-color:white;
-	width:128px;position:absolute;left:860px;top:135px;">
-    2131
-</div>

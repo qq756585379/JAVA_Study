@@ -2,6 +2,9 @@
 
 ## 1、创建数据库表，并向表中添加测试数据
 ```
+
+mysql -h localhost -u root -p
+
 create database day14;
 use day14;
 
@@ -18,6 +21,14 @@ insert into book(id,name, price, pnum, category, description)
 
 values('1111222','金品梅',28,100,'动作','好书');
 
+
+insert into book(id,name, price, pnum, category, description) 
+
+values('1111223','iOS',28,100,'动作','好书');
+
+insert into book(id,name, price, pnum, category, description) 
+
+values('1111225','i like u',28,100,'动作','好书');
 
 select * from book;
 

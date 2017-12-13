@@ -253,6 +253,8 @@ h1 {
     clear: both;
     background-color: #EFEEDC;
     margin-top: 15px;
+    position: fixed;
+    bottom: 0;
 }
 
 .ctl {
@@ -363,7 +365,7 @@ h1 {
 }
 
 #logindiv {
-    background-image: url(../images/loginbg.gif);
+    background-image: url(../images/main/loginbg.gif);
     width: 305px;
     height: 361px;
     background-repeat: no-repeat;

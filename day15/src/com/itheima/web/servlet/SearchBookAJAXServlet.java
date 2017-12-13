@@ -19,8 +19,11 @@ public class SearchBookAJAXServlet extends HttpServlet {
 
         String name = request.getParameter("name");
         name = new String(name.getBytes("iso-8859-1"), "UTF-8");
+        System.out.println(name);
+
         BookServiceImpl bs = new BookServiceImpl();
         List<Object> list = bs.searchBookByName(name);
+        System.out.println(list);
 
         //把集合中的数据转换为字符串返回到网页
         String str = "";

@@ -87,19 +87,18 @@
                         </tr>
                         <tr>
                             <td style="text-align:right;width:20%;">&nbsp;</td>
-                            <td colspan="2" style="width:50%"><img
-                                    src="${pageContext.request.contextPath}/imageCode" width="180"
+                            <td colspan="2" style="width:50%">
+                                <img src="${pageContext.request.contextPath}/imageCode" width="180"
                                     height="30" class="textinput" style="height:30px;" id="img"/>&nbsp;&nbsp;
                                 <a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
                             </td>
                         </tr>
                     </table>
 
-
                     <table width="70%" border="0" cellspacing="0">
                         <tr>
                             <td style="padding-top:20px; text-align:center">
-                                <input type="image" src="images/signup.gif" name="submit" border="0">
+                                <input type="image" src="images/main/signup.gif" name="submit" border="0">
                             </td>
                         </tr>
                     </table>
@@ -113,7 +112,7 @@
     <table width="100%" border="0" cellspacing="0">
         <tr>
             <td rowspan="2" style="width:10%">
-                <img src="images/bottomlogo.gif" width="195" height="50" style="margin-left:175px"/>
+                <img src="images/main/bottomlogo.gif" width="195" height="50" style="margin-left:175px"/>
             </td>
             <td style="padding-top:5px; padding-left:50px">
                 <a href="#"><font color="#747556"><b>CONTACT US</b> </font> </a>
