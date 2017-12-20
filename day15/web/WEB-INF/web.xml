@@ -6,6 +6,37 @@
 
     <display-name>day15</display-name>
 
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.itheima.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>com.itheima.filter.RoleFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImageCodeServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.ImageCodeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CkEmailServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.CkEmailServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>BookListServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.BookListServlet</servlet-class>
@@ -23,14 +54,51 @@
         <servlet-class>com.itheima.web.servlet.UpdateBookServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>DelBookServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.DelBookServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelAllBooksServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.DelAllBooksServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>SearchBooksServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.SearchBooksServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>PageServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.PageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>findBookInfoServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.FindBookInfoServlet</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>SearchBookAJAXServlet</servlet-name>
         <servlet-class>com.itheima.web.servlet.SearchBookAJAXServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCartServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.AddCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangeNumServlet</servlet-name>
+        <servlet-class>com.itheima.web.servlet.ChangeNumServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CkEmailServlet</servlet-name>
+        <url-pattern>/servlet/ckEmailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageCodeServlet</servlet-name>
+        <url-pattern>/imageCode</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BookListServlet</servlet-name>
         <url-pattern>/servlet/bookListServlet</url-pattern>
@@ -48,12 +116,36 @@
         <url-pattern>/servlet/updateBookServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>DelBookServlet</servlet-name>
+        <url-pattern>/servlet/delBookServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DelAllBooksServlet</servlet-name>
+        <url-pattern>/servlet/delAllBooksServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>SearchBooksServlet</servlet-name>
         <url-pattern>/servlet/searchBooksServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>PageServlet</servlet-name>
+        <url-pattern>/servlet/pageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findBookInfoServlet</servlet-name>
+        <url-pattern>/servlet/findBookInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>SearchBookAJAXServlet</servlet-name>
         <url-pattern>/servlet/searchBookAJAXServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCartServlet</servlet-name>
+        <url-pattern>/servlet/addCartServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeNumServlet</servlet-name>
+        <url-pattern>/servlet/changeNumServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

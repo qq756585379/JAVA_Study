@@ -18,7 +18,7 @@
         var category = document.getElementById("category");//得到下拉列表
         var ops = category.options;//得到下拉列表中的所有option标签数组
         for (var i = 0; i < ops.length; i++) {
-            if (ops[i].value == t) {//判断哪一个option选项中的value值与t(当前书的类名称)相等
+            if (ops[i].value === t) {//判断哪一个option选项中的value值与t(当前书的类名称)相等
                 ops[i].selected = true;//相等则把selected=selected加上
                 return;
             }

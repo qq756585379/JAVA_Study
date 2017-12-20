@@ -9,6 +9,15 @@ public class Book implements Serializable {
     private int pnum;
     private String category;
     private String description;
+    private String img_url;
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
+    }
 
     public String getId() {
         return id;

@@ -1,14 +1,13 @@
 function CheckNull(strElem, strName) {
-    if (document.getElementById(strElem).value == "") {
+    if (document.getElementById(strElem).value === "") {
         window.alert(strName + " 为必填项");
         document.getElementById(strElem).focus();
         return false;
     }
-
     return true;
 }
 function CheckMustNum(strElem, strName) {
-    if (document.getElementById(strElem).value == "" || isNaN(document.getElementById(strElem).value)) {
+    if (document.getElementById(strElem).value === "" || isNaN(document.getElementById(strElem).value)) {
         window.alert(strName + " 为必填项且必须是数值型");
         document.getElementById(strElem).focus();
         return false;
@@ -63,9 +62,8 @@ function CheckEC(strElem, strName) {
     }
     return true;
 }
-
 function CheckEmail(strElem, strName) {
-    if (document.getElementById(strElem).value.indexOf('@') == -1) {
+    if (document.getElementById(strElem).value.indexOf('@') === -1) {
         window.alert("请输入正确的 " + strName);
         document.getElementById(strElem).focus();
         return false;
@@ -76,28 +74,26 @@ function CheckEmail(strElem, strName) {
 function CheckMustDate(strElem, strName) {
     if (CommCheckDate(document.getElementById(strElem).value)) {
         return true;
-    }
-    else {
+    } else {
         window.alert(strName + " 是必填项且为日期型,例:1900-01-01");
         document.getElementById(strElem).focus();
         return false
     }
 }
 function CheckDate(strElem, strName) {
-    if (document.getElementById(strElem).value == "") {
+    if (document.getElementById(strElem).value === "") {
         return true;
     }
     if (CommCheckDate(document.getElementById(strElem).value)) {
         return true;
-    }
-    else {
+    } else {
         window.alert(strName + " 必须是日期型,例:1900-01-01");
         document.getElementById(strElem).focus();
         return false
     }
 }
 function CommCheckDate(strValue) {
-    var objRegExp = /^\d{4}(\-)\d{1,2}\1\d{1,2}$/
+    var objRegExp = /^\d{4}(\-)\d{1,2}\1\d{1,2}$/;
     if (!objRegExp.test(strValue)) {
         return false;
     }
@@ -152,7 +148,7 @@ function CommCheckDate(strValue) {
                 return true;
             }
         case 2:
-            var booLeapYear = (intYear % 4 == 0 && (intYear % 100 != 0 || intYear % 400 == 0));
+            var booLeapYear = (intYear % 4 === 0 && (intYear % 100 !== 0 || intYear % 400 === 0));
             if (((booLeapYear && intDay <= 29) || (!booLeapYear && intDay <= 28)) && intDay > 0) {
                 return true;
             }
@@ -166,7 +162,7 @@ function CompareDate(SmallDate, BigDate) {
     var intSmallYearLen = SmallDate.indexOf('-');
     var intBigYearLen = BigDate.indexOf('-');
 
-    if (intSmallYearLen == -1 || intBigYearLen == -1) {
+    if (intSmallYearLen === -1 || intBigYearLen === -1) {
         return true;
     }
 
@@ -178,7 +174,7 @@ function CompareDate(SmallDate, BigDate) {
     else if (strSmallYear < strBigYear) {
         return true;
     }
-    else if (strSmallYear == strBigYear) {
+    else if (strSmallYear === strBigYear) {
         var intSmallMonthLen = SmallDate.indexOf('-', 5);
         var intBigMonthLen = BigDate.indexOf('-', 5);
         var strSmallMonth = parseInt(SmallDate.substring(intSmallYearLen + 1, intSmallMonthLen));
@@ -189,7 +185,7 @@ function CompareDate(SmallDate, BigDate) {
         else if (strSmallMonth < strBigMonth) {
             return true;
         }
-        else if (strSmallMonth == strBigMonth) {
+        else if (strSmallMonth === strBigMonth) {
             if (SmallDate.indexOf(':') > 0) {
                 SmallDate = SmallDate.substring(0, SmallDate.length - 8);
             }
@@ -200,7 +196,7 @@ function CompareDate(SmallDate, BigDate) {
             var intBigDay = BigDate.lastIndexOf('-') + 1;
             var strSmallDay = parseInt(SmallDate.substring(intSmallDay, SmallDate.length));
             var strBigDay = parseInt(BigDate.substring(intBigDay, BigDate.length));
-            if (strSmallDay > strBigDay || strSmallDay == strBigDay) {
+            if (strSmallDay > strBigDay || strSmallDay === strBigDay) {
                 return false;
             }
             else {

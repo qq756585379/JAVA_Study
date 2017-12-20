@@ -52,5 +52,4 @@ public class C3P0Util {
             conn = null;
         }
     }
-
 }

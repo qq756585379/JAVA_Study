@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ServletDemo2 extends HttpServlet {
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		String name = (String) this.getServletContext().getAttribute("name");
+        String name = (String) this.getServletContext().getAttribute("name");
 
-		if(name==null){
-			System.out.println("name==null");
-		}
+        if (name == null) {
+            System.out.println("name==null");
+        }
 
-		System.out.println(name);
-	}
+        System.out.println(name);
+    }
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
-	}
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 
 }

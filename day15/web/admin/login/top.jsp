@@ -39,8 +39,7 @@
     </script>
 </HEAD>
 <body>
-<table width="100%" height="70%" border="0" cellspacing="0"
-       cellpadding="0">
+<table width="100%" height="70%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td>
             <img width="100%" src="${pageContext.request.contextPath}/admin/images/top_01.jpg">
@@ -78,7 +77,7 @@
                             myArray[5] = "星期五";
                             myArray[6] = "星期六";
                             weekday = tmpDate.getDay();
-                            if (weekday == 0 | weekday == 6) {
+                            if (weekday === 0 || weekday === 6) {
                                 document.write(myArray[weekday])
                             } else {
                                 document.write(myArray[weekday])
@@ -92,9 +91,8 @@
                             <tr>
                                 <td width="16"
                                     background="${pageContext.request.contextPath}/admin/images/mis_05b.jpg">
-                                    <img
-                                            src="${pageContext.request.contextPath}/admin/images/mis_05a.jpg"
-                                            width="6" height="18">
+                                    <img src="${pageContext.request.contextPath}/admin/images/mis_05a.jpg"
+                                         width="6" height="18">
                                 </td>
                                 <td width="155" valign="bottom"
                                     background="${pageContext.request.contextPath}/admin/images/mis_05b.jpg">
@@ -102,9 +100,8 @@
                                                           onclick="exitSys()">退出系统</a> </font></td>
                                 <td width="10" align="right"
                                     background="${pageContext.request.contextPath}/admin/images/mis_05b.jpg">
-                                    <img
-                                            src="${pageContext.request.contextPath}/admin/images/mis_05c.jpg"
-                                            width="6" height="18">
+                                    <img src="${pageContext.request.contextPath}/admin/images/mis_05c.jpg"
+                                         width="6" height="18">
                                 </td>
                             </tr>
                         </table>

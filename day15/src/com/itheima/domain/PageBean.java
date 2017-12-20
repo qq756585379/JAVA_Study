@@ -7,7 +7,8 @@ public class PageBean {
     private int pageSize;
     private int count;
     private int totalPage;
-    private List<Book> books;
+    private List<Product> products;
+    private String category;
 
     public int getCurrentPage() {
         return currentPage;
@@ -41,11 +42,19 @@ public class PageBean {
         this.totalPage = totalPage;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public String getCategory() {
+        return category;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

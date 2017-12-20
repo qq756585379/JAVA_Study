@@ -31,7 +31,7 @@ function Node(id, pid, name, url, title, target, icon, iconOpen, open) {
 
     this._p;
 
-};
+}
 
 
 // Tree object
@@ -58,7 +58,7 @@ function dTree(objName) {
 
         inOrder: false
 
-    }
+    };
 
     this.icon = {
 
@@ -457,7 +457,7 @@ dTree.prototype.closeLevel = function (node) {
 
     for (var n = 0; n < this.aNodes.length; n++) {
 
-        if (this.aNodes[n].pid == node.pid && this.aNodes[n].id != node.id && this.aNodes[n]._hc) {
+        if (this.aNodes[n].pid === node.pid && this.aNodes[n].id !== node.id && this.aNodes[n]._hc) {
 
             this.nodeStatus(false, n, this.aNodes[n]._ls);
 
@@ -478,7 +478,7 @@ dTree.prototype.closeAllChildren = function (node) {
 
     for (var n = 0; n < this.aNodes.length; n++) {
 
-        if (this.aNodes[n].pid == node.id && this.aNodes[n]._hc) {
+        if (this.aNodes[n].pid === node.id && this.aNodes[n]._hc) {
 
             if (this.aNodes[n]._io) this.nodeStatus(false, n, this.aNodes[n]._ls);
 
@@ -490,7 +490,7 @@ dTree.prototype.closeAllChildren = function (node) {
 
     }
 
-}
+};
 
 
 // Change the status of a node(open or closed)
@@ -632,7 +632,7 @@ if (!Array.prototype.push) {
     }
 
 }
-;
+
 
 if (!Array.prototype.pop) {
 
@@ -647,4 +647,3 @@ if (!Array.prototype.pop) {
     }
 
 }
-;

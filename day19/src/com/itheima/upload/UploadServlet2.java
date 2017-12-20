@@ -81,34 +81,38 @@ public class UploadServlet2 extends HttpServlet {
             // 得到文件输入流
             InputStream is = fileitem.getInputStream();
 
-            // 创建一个文件存盘的目录
-            String directoryRealPath = this.getServletContext().getRealPath("/WEB-INF/upload");
-            File storeDirectory = new File(directoryRealPath);// 即代表文件又代表目录
-            if (!storeDirectory.exists()) {
-                storeDirectory.mkdirs();// 创建一个指定的目录
-            }
-            // 得到上传的名子
-            String filename = fileitem.getName();// 文件项中的值 F:\图片素材\小清新\43.jpg 或者
-            // 43.jpg
-            if (filename != null) {
-                // filename.substring(filename.lastIndexOf(File.separator)+1);
-                filename = FilenameUtils.getName(filename);// 效果同上
-            } else {
-                return;
+            // 文件项中的值 F:\图片素材\小清新\43.jpg 或者 43.jpg
+            String filename = fileitem.getName();//得到上传的文件名
+            String extension = FilenameUtils.getExtension(filename);
+
+            if (!("jsp".equals(extension) || "exe".equals(extension))) {//上传的文件不能是jsp、exe
+
+                // 创建一个文件存盘的目录
+                String directoryRealPath = this.getServletContext().getRealPath("/WEB-INF/upload");
+                File storeDirectory = new File(directoryRealPath);// 即代表文件又代表目录
+                if (!storeDirectory.exists()) {
+                    storeDirectory.mkdirs();// 创建一个指定的目录
+                }
+
+                if (filename != null) {
+                    // filename.substring(filename.lastIndexOf(File.separator)+1);
+                    filename = FilenameUtils.getName(filename);// 效果同上
+                } else {
+                    return;
+                }
+
+                // 解决文件同名的问题
+                filename = UUID.randomUUID() + "_" + filename;
+                // 目录打散
+                // String childDirectory = makeChildDirectory(storeDirectory);
+                // 2015-10-19
+                String childDirectory = makeChildDirectory(storeDirectory, filename); // a/b
+
+                // 上传文件，自动删除临时文件
+                fileitem.write(new File(storeDirectory, childDirectory + File.separator + filename));
+                fileitem.delete();
             }
 
-            // 解决文件同名的问题
-            filename = UUID.randomUUID() + "_" + filename;
-            // 目录打散
-            // String childDirectory = makeChildDirectory(storeDirectory);
-            // 2015-10-19
-            String childDirectory = makeChildDirectory(storeDirectory, filename); // a/b
-
-            // 上传文件，自动删除临时文件
-            fileitem.write(new File(storeDirectory, childDirectory + File.separator + filename));
-            fileitem.delete();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -134,7 +138,7 @@ public class UploadServlet2 extends HttpServlet {
             if (filename != null) {
                 // filename.substring(filename.lastIndexOf(File.separator)+1);
                 filename = FilenameUtils.getName(filename);// 效果同上
-            }else {
+            } else {
                 return;
             }
 

@@ -51,7 +51,7 @@ public class TestCRUD {
             conn = DBUtils.getConnection();
             stmt = conn.prepareStatement("INSERT INTO users VALUES(?,?,?,?,?)");
             stmt.setInt(1, 5);
-            stmt.setString(2, "tom");
+            stmt.setString(2, "杨俊");
             stmt.setString(3, "333");
             stmt.setString(4, "tom@163.com");
             //stmt.setDate(5, new java.sql.Date(System.currentTimeMillis()));

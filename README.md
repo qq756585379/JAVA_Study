@@ -102,6 +102,12 @@ SELECT * FROM account;
 
 ### day15 - BookManager
 
+```
+> 动态验证码
+> 文件上传,文件打散
+```
+
 ### day16 - Ajax
+### day17 - 过滤器解决乱码问题，自动登录demo
 
 ### day19 - Uploadload/download

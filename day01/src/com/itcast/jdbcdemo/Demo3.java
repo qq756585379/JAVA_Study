@@ -69,9 +69,9 @@ public class Demo3 {
     @Test
     public void testInsert() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01?user=root&password=root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/day01?user=root&password=123123");
         Statement stmt = conn.createStatement();
-        int i = stmt.executeUpdate("INSERT INTO users VALUES(4,'tom','123','tom@163.com','2015-09-28')");
+        int i = stmt.executeUpdate("INSERT INTO users VALUES(20,'杨俊','123','tom@163.com','2015-09-28',100)");
         if (i > 0) {
             System.out.println("success");
         }
