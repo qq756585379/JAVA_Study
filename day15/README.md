@@ -3,7 +3,7 @@
 ## 1、创建数据库表，并向表中添加测试数据
 ```
 
-mysql -h localhost -u root -p
+mysql -h localhost -uroot -p
 
 CREATE DATABASE day14 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 
