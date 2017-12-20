@@ -3,7 +3,7 @@
 ## 1、创建数据库表，并向表中添加测试数据
 ```
 
-mysql -h localhost -u root -p
+mysql -h localhost -uroot -p
 
 create database day14;
 use day14;
