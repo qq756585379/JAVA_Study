@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>电子书城</title>
+    <title>注册成功</title>
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
     <script type="text/javascript" src="js/my.js"></script>
 </head>
-<body class="main">
+<body class="main" onload="startSecond()">
 
 <%@include file="head.jsp" %>
 <%@include file="menu_search.jsp" %>

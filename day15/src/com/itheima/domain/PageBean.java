@@ -8,6 +8,16 @@ public class PageBean {
     private int count;
     private int totalPage;
     private List<Product> products;
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    private List<Book> books;
     private String category;
 
     public int getCurrentPage() {

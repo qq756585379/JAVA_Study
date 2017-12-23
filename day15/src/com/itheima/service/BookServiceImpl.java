@@ -79,6 +79,8 @@ public class BookServiceImpl {
             //把5个变量封装到PageBean中，做为返回值
             PageBean pb = new PageBean();
             pb.setBooks(books);
+
+//            pb.setProducts();
             pb.setCount(count);
             pb.setCurrentPage(currentPage);
             pb.setPageSize(pageSize);

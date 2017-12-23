@@ -1,5 +1,4 @@
-package com.itheima.web.servlet;
-
+package com.itheima.servlet;
 
 import cn.dsna.util.images.ValidateCode;
 

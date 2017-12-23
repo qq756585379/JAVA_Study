@@ -13,6 +13,7 @@
     <script type="text/javascript">
         function changeImage() {
             document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
+            document.getElementById("img2").src = "${pageContext.request.contextPath}/imageCode2?time=" + new Date().getTime();
         }
 
         //验证油箱是否存在
@@ -51,7 +52,7 @@
         <table width="850px" border="0" cellspacing="0">
             <tr>
                 <td style="padding:30px">
-                    <h1>新会员注册</h1>
+                    <h1>新会员注册 ${user_msg }</h1>
 
                     <table width="70%" border="0" cellspacing="2" class="upline">
                         <tr>
@@ -102,7 +103,6 @@
                                 <textarea class="textarea" name="introduce"></textarea>
                             </td>
                         </tr>
-
                     </table>
 
                     <h1>注册校验</h1>
@@ -110,18 +110,23 @@
                         <tr>
                             <td style="text-align:right; width:20%">输入校验码：</td>
                             <td style="width:50%">
-                                <input type="text" class="textinput"/>
+                                <input type="text" class="textinput"name="ckcode"/>
                             </td>
-                            <td>&nbsp;</td>
+                            <td style="width:50%">${ckcode_msg }</td>
                         </tr>
                         <tr>
                             <td style="text-align:right;width:20%;">&nbsp;</td>
                             <td colspan="2" style="width:50%">
+                                <img src="${pageContext.request.contextPath}/imageCode2" width="180"
+                                     height="30" onclick="changeImage()" class="textinput" style="height:30px;"
+                                     id="img2"/>
+                                &nbsp;&nbsp;
+                                <a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
+                            </td>
+                            <td colspan="2" style="width:50%">
                                 <img src="${pageContext.request.contextPath}/imageCode" width="180"
                                      height="30" onclick="changeImage()" class="textinput" style="height:30px;"
                                      id="img"/>
-                                &nbsp;&nbsp;
-                                <a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
                             </td>
                         </tr>
                     </table>
