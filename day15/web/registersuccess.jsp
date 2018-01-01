@@ -9,9 +9,11 @@
 <html>
 <head>
     <title>注册成功</title>
+    <meta http-equiv="refresh" content="3;url=index.jsp">
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
     <script type="text/javascript" src="js/my.js"></script>
 </head>
+
 <body class="main" onload="startSecond()">
 
 <%@include file="head.jsp" %>
@@ -28,7 +30,7 @@
                         </td>
                         <td style="padding-top:30px">
                             <font style="font-weight:bold; color:#FF0000">注册成功,别忘记激活帐户啊</font><br/><br/>
-                            <a href="index.jsp"><span id="second">5</span>秒后自动为您转跳回首页</a>
+                            <a href="index.jsp"><span id="second">3</span>秒后自动为您转跳回首页</a>
                         </td>
                     </tr>
                 </table>

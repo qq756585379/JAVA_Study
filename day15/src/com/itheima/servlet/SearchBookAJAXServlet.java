@@ -1,12 +1,12 @@
-package com.itheima.web.servlet;
+package com.itheima.servlet;
 
-import com.itheima.service.BookServiceImpl;
+import com.itheima.service.ProductService;
 
 import javax.servlet.ServletException;
+import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 public class SearchBookAJAXServlet extends HttpServlet {
@@ -21,8 +21,8 @@ public class SearchBookAJAXServlet extends HttpServlet {
         name = new String(name.getBytes("iso-8859-1"), "UTF-8");
         System.out.println(name);
 
-        BookServiceImpl bs = new BookServiceImpl();
-        List<Object> list = bs.searchBookByName(name);
+        ProductService ps = new ProductService();
+        List<Object> list = ps.searchBookByName(name);
         System.out.println(list);
 
         //把集合中的数据转换为字符串返回到网页

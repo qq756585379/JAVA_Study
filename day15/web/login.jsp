@@ -17,7 +17,7 @@
 <jsp:include page="menu_search.jsp"/>
 
 <div id="divcontent">
-    <form action="${pageContext.request.contextPath}/login" method="post">
+    <form action="${pageContext.request.contextPath }/user?method=login" method="post">
         <div style="height:470px">
             <table width="85%" border="0" cellspacing="0">
                 <tr>
@@ -31,7 +31,7 @@
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;padding-top:20px;">
-                                        <font color="#ff0000">${requestScope["register_message"]}</font>
+                                        <font color="#ff0000">${requestScope["user_msg"]}</font>
                                     </td>
                                 </tr>
                                 <tr>
@@ -43,30 +43,26 @@
                                                     用户名：
                                                 </td>
                                                 <td style="text-align:left">
-                                                    <input name="username" type="text"
-                                                           class="textinput"/>
+                                                    <input name="username" type="text" class="textinput"/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align:right; padding-top:5px">密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
                                                 <td style="text-align:left">
-                                                    <input name="password" type="password"
-                                                           class="textinput"/>
+                                                    <input name="password" type="password" class="textinput"/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" style="text-align:center">
-                                                    <input type="checkbox" name="checkbox"
-                                                           value="checkbox"/>
+                                                    <input type="checkbox" name="checkbox" value="checkbox"/>
                                                     记住用户名&nbsp;&nbsp;
-                                                    <input type="checkbox" name="checkbox"
-                                                           value="checkbox"/> 自动登录
+                                                    <input type="checkbox" name="checkbox" value="checkbox"/> 自动登录
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" style="padding-top:10px; text-align:center">
                                                     <input name="image" type="image"
-                                                           onclick="return formcheck()"
+                                                           onclick="formcheck()"
                                                            src="images/main/loginbutton.gif" width="83"
                                                            height="22"/>
                                                 </td>

@@ -1,11 +1,14 @@
 var interval;
 
 function startSecond() {
+    var second = document.getElementById("second");
+    alert(second);
     interval = window.setInterval("changeSecond()", 1000);
 }
 
 function changeSecond() {
     var second = document.getElementById("second");
+    alert(second);
     var svalue = second.innerHTML;
     svalue = svalue - 1;
 

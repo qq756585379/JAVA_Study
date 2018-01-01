@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -19,11 +20,14 @@ public class RegisterServlet extends HttpServlet {
         //处理验证码
         String ckcode = request.getParameter("ckcode");
         String checkcode_session = (String) request.getSession().getAttribute("checkcode_session");
+        System.out.println("checkcode_session = " + checkcode_session);
+        System.out.println("ckcode = " + ckcode);
         if (!checkcode_session.equals(ckcode)) {//如果两个验证码不一致，跳回注册面
             request.setAttribute("ckcode_msg", "验证码错误！");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
             return;
         }
+
         //获取表单数据
         User user = new User();
         try {
@@ -31,11 +35,19 @@ public class RegisterServlet extends HttpServlet {
             user.setActiveCode(UUID.randomUUID().toString());//手动设置激活码
             //调用业务逻辑
             UserService us = new UserService();
-            us.regist(user);
+            us.regist(user);//先存数据库再发激活邮件
             //分发转向
             //要求用户激活后才能登录，所以不能把用户信息保存session中
             //request.getSession().setAttribute("user", user);//把用户信息封装到session对象中
-            request.getRequestDispatcher("/registersuccess.jsp").forward(request, response);
+            //request.getRequestDispatcher("/registersuccess.jsp").forward(request, response);
+
+            //模拟激活过程
+            HttpSession session = request.getSession();
+            session.setAttribute("activeCode", user.getActiveCode());
+
+            //String url = request.getContextPath() + "/activeServlet";
+            //response.setHeader("refresh", "2;url=" + response.encodeURL(url));
+            request.getRequestDispatcher("/activeServlet").forward(request, response);
         } catch (UserException e) {
             request.setAttribute("user_msg", e.getMessage());
             request.getRequestDispatcher("/register.jsp").forward(request, response);

@@ -20,16 +20,29 @@
                 <a href="javascript: d.openAll();">展开所有</a> | <a href="javascript: d.closeAll();">关闭所有</a>
                 <link rel="StyleSheet" href="${pageContext.request.contextPath}/admin/css/dtree.css" type="text/css"/>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/admin/js/dtree.js"></script>
+
+                <%--<script type="text/javascript">--%>
+                    <%--<!----%>
+                    <%--d = new dTree('d');--%>
+                    <%--d.add(0, -1, '系统菜单树');--%>
+                    <%--//第一个参数：当前节点，第二个参数：父级节点--%>
+                    <%--d.add(1, 0, '商品管理', '${pageContext.request.contextPath}/admin/login/welcome.jsp', '', 'mainFrame');--%>
+                    <%--//子目录添加--%>
+                    <%--d.add(2, 1, '商品查看', '${pageContext.request.contextPath}/servlet/bookListServlet', '', 'mainFrame');--%>
+                    <%--document.write(d);--%>
+                    <%--//-->--%>
+                <%--</script>--%>
+
                 <script type="text/javascript">
                     <!--
                     d = new dTree('d');
                     d.add(0, -1, '系统菜单树');
-                    //第一个参数：当前节点，第二个参数：父级节点
                     d.add(1, 0, '商品管理', '${pageContext.request.contextPath}/admin/login/welcome.jsp', '', 'mainFrame');
-
+                    d.add(2, 0, '订单管理', '${pageContext.request.contextPath}/admin/login/welcome.jsp', '', 'mainFrame');
                     //子目录添加
-                    d.add(2, 1, '商品查看', '${pageContext.request.contextPath}/servlet/bookListServlet', '', 'mainFrame');
-
+                    d.add(11, 1, '商品查看', '${pageContext.request.contextPath}/servlet/bookListServlet', '', 'mainFrame');
+                    d.add(12, 1, '销售榜单', '${pageContext.request.contextPath}/admin/products/download.jsp', '', 'mainFrame');
+                    d.add(21, 2, '订单查看', '${pageContext.request.contextPath}/admin/orders/list.jsp', '', 'mainFrame');
                     document.write(d);
                     //-->
                 </script>

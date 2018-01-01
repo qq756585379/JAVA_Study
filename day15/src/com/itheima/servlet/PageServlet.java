@@ -1,8 +1,8 @@
-package com.itheima.web.servlet;
-
+package com.itheima.servlet;
 
 import com.itheima.domain.PageBean;
-import com.itheima.service.BookServiceImpl;
+import com.itheima.domain.Product;
+import com.itheima.service.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +15,11 @@ public class PageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //导航按钮的查询条件
+        String category = request.getParameter("category");
+        if (category == null) {
+            category = "";
+        }
         //初始化每页显示的记录数
         int pageSize = 4;
 
@@ -24,11 +29,16 @@ public class PageServlet extends HttpServlet {
             currentPage = Integer.parseInt(currPage);
         }
 
-        BookServiceImpl bs = new BookServiceImpl();
+        ProductService bs = new ProductService();
         //分页查询，并返回PageBean对象
-        PageBean pb = bs.findBooksPage(currentPage, pageSize);
+        PageBean pb = bs.findBooksPage(currentPage, pageSize, category);
 
         request.setAttribute("pb", pb);
+
+        for (Product book : pb.getProducts()) {
+            System.out.println("book.getImg_url = " + book.getImg_url());
+        }
+
         request.getRequestDispatcher("/product_list.jsp").forward(request, response);
     }
 

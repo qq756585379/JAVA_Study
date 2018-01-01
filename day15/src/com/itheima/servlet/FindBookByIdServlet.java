@@ -1,4 +1,4 @@
-package com.itheima.web.servlet;
+package com.itheima.servlet;
 
 import java.io.IOException;
 
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.itheima.domain.Book;
-import com.itheima.service.BookServiceImpl;
+import com.itheima.domain.Product;
+import com.itheima.service.ProductService;
 
 public class FindBookByIdServlet extends HttpServlet {
 
@@ -17,8 +17,8 @@ public class FindBookByIdServlet extends HttpServlet {
 
         String id = request.getParameter("id");
 
-        BookServiceImpl bs = new BookServiceImpl();
-        Book book = bs.findBookById(id);
+        ProductService bs = new ProductService();
+        Product book = bs.findBookById(id);
 
         request.setAttribute("book", book);
         request.getRequestDispatcher("/admin/products/edit.jsp").forward(request, response);

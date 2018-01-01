@@ -14,10 +14,9 @@ public class ServletDemo1 extends HttpServlet {
             throws ServletException, IOException {
 
         response.setCharacterEncoding("UTF-8");
-
         response.setHeader("content-type", "text/html;charset=UTF-8");
-
         response.setContentType("text/html; charset=UTF-8");
+
         //局部变量，java自动回收，不需要手动回收
         PrintWriter out = response.getWriter();//得到一个字符输出流
         out.write("你好");

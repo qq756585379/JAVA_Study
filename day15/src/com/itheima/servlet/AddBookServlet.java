@@ -1,4 +1,4 @@
-package com.itheima.web.servlet;
+package com.itheima.servlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.itheima.domain.Product;
+import com.itheima.service.ProductService;
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.itheima.domain.Book;
-import com.itheima.service.BookServiceImpl;
 import com.itheima.util.UUIDUtil;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadBase;
@@ -103,17 +103,17 @@ public class AddBookServlet extends HttpServlet {
                 }
             }
 
-            Book book = new Book();
+            Product book = new Product();
             BeanUtils.populate(book, map);
             book.setId(UUIDUtil.getUUID());//设置图书编号
 
             //调用业务逻辑
-            BookServiceImpl bs = new BookServiceImpl();
+            ProductService bs = new ProductService();
             bs.addBook(book);
 
             //分发转向
             //不写/代表相对路径，相对于本类的路径
-            request.getRequestDispatcher("bookListServlet").forward(request, response);
+            request.getRequestDispatcher("/servlet/bookListServlet").forward(request, response);
 
         } catch (FileUploadBase.FileSizeLimitExceededException e) {
             System.out.println("文件过大，不能超过10M");
@@ -131,7 +131,6 @@ public class AddBookServlet extends HttpServlet {
         }
 
 		/*
-
         //获取表单数据
 		Book book = new Book();
 		try {
@@ -147,7 +146,6 @@ public class AddBookServlet extends HttpServlet {
 		//分发转向
 		//不写/代表相对路径，相对于本类的路径
 		request.getRequestDispatcher("bookListServlet").forward(request, response);
-
 		*/
     }
 

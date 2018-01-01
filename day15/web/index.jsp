@@ -27,6 +27,7 @@
 <%@include file="head.jsp" %>
 <%@include file="menu_search.jsp" %>
 
+<p>${user.username}</p>
 <div id="divad">
     <img src="images/ad/index_ad.jpg"/>
 </div>

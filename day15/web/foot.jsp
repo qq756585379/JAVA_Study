@@ -3,7 +3,8 @@
     <table width="100%" border="0" cellspacing="0">
         <tr>
             <td rowspan="2" style="width:10%">
-                <img src="images/main/logo.png" width="200" height="60" style="margin-left:175px"/>
+                <img src="${pageContext.request.contextPath }/images/main/logo.png" width="200" height="60"
+                     style="margin-left:175px"/>
             </td>
             <td style="padding-top:5px; padding-left:50px">
                 <a href="#"><font color="#747556"><b>CONTACT US</b> </font> </a>

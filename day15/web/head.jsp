@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 
-
 <div id="divhead">
     <table cellspacing="0" class="headtable">
         <tr>

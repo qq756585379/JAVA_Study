@@ -1,6 +1,7 @@
 package com.itheima.servlet;
 
 import com.itheima.domain.Book;
+import com.itheima.domain.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,18 +19,18 @@ public class ChangeNumServlet extends HttpServlet {
         String id = request.getParameter("id");
         String num = request.getParameter("num");
         //注：只能重写id的hashcode
-        Book b = new Book();
-        b.setId(id);
+        Product book = new Product();
+        book.setId(id);
 
         HttpSession session = request.getSession();
-        Map<Book, String> cart = (Map<Book, String>) session.getAttribute("cart");
+        Map<Product, String> cart = (Map<Product, String>) session.getAttribute("cart");
         //如果商品数据为0，就删除对象
         if ("0".equals(num)) {
-            cart.remove(b);
+            cart.remove(book);
         }
         //判断如果找到与id相同的书，
-        if (cart.containsKey(b)) {
-            cart.put(b, num);
+        if (cart.containsKey(book)) {
+            cart.put(book, num);
         }
 
         response.sendRedirect(request.getContextPath() + "/cart.jsp");

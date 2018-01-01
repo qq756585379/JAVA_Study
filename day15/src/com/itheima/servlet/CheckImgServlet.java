@@ -27,7 +27,7 @@ public class CheckImgServlet extends HttpServlet {
     public void init() throws ServletException {
         // 初始化阶段，读取new_words.txt
         // web工程中读取 文件，必须使用绝对磁盘路径
-        String path = getServletContext().getRealPath("/WEB-INF/new_words.txt");
+        String path = getServletContext().getRealPath("/new_words.txt");
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
             String line;
@@ -44,9 +44,9 @@ public class CheckImgServlet extends HttpServlet {
             throws ServletException, IOException {
 
         // 禁止缓存
-        // response.setHeader("Cache-Control", "no-cache");
-        // response.setHeader("Pragma", "no-cache");
-        // response.setDateHeader("Expires", -1);
+//        response.setHeader("Cache-Control", "no-cache");
+//        response.setHeader("Pragma", "no-cache");
+//        response.setDateHeader("Expires", -1);
 
         int width = 120;
         int height = 30;

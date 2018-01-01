@@ -14,10 +14,10 @@ public class UserService {
     public void regist(User user) throws UserException {
         try {
             ud.addUser(user);//用户注册
-
             String emailMsg = "注册成功，请<a href='http://www.product.com/activeServlet?activeCode=" +
                     user.getActiveCode() + "'>激活</a>后登录";
-            SendJMail.sendMail(user.getEmail(), emailMsg);
+            //有问题先注释掉
+            //SendJMail.sendMail(user.getEmail(), emailMsg);//只能往外发，暂时收不到回复
         } catch (SQLException e) {
             e.printStackTrace();
             throw new UserException("注册失败！");
@@ -30,7 +30,6 @@ public class UserService {
             User user = ud.findUserByActiveCode(activeCode);
             if (user != null) {
                 //激活用户
-
                 ud.activeCode(activeCode);
                 return;
             }

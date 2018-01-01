@@ -45,6 +45,12 @@ public class UserDao {
         return qr.query("select * from user where id=?", new BeanHandler<User>(User.class), id);
     }
 
+    // 根据email查找用户
+    public User findUserByEmail(String email) throws SQLException {
+        QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+        return qr.query("select * from user where email=?", new BeanHandler<User>(User.class), email);
+    }
+
     // 修改用户信息
     public void modifyUser(User user) throws SQLException {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());

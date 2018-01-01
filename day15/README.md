@@ -7,7 +7,7 @@ mysql -h localhost -uroot -p
 
 CREATE DATABASE day14 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 
-create database bookStore DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+create database bookStore;
 
 use bookStore;
 
@@ -39,15 +39,14 @@ CREATE TABLE `user` (
 )character set utf8 collate utf8_general_ci;
 
 **********************商品表*****************************
-CREATE TABLE `products` (
-  `id` VARCHAR(100) ,
-  `name` VARCHAR(40) ,
-  `price` DOUBLE ,
-  `category` VARCHAR(40) ,
-  `pnum` INT(11) ,
-  `imgurl` VARCHAR(100) ,
-  `description` VARCHAR(255) ,
-  PRIMARY KEY (`id`)
+create table book(
+	id varchar(50) primary key,
+	name varchar(50),
+	price double,
+	pnum int,
+	category varchar(30),
+	description varchar(200),
+	imgurl VARCHAR(100) 
 )character set utf8 collate utf8_general_ci;
 
 *********************订单表******************************
@@ -78,16 +77,6 @@ CREATE TABLE `orderitem` (
 *********************************************************
 
 
-
-
-create table book(
-	id varchar(50) primary key,
-	name varchar(50),
-	price double,
-	pnum int,
-	category varchar(30),
-	description varchar(200)
-)character set utf8 collate utf8_general_ci;
 
 ***************************************************
 CREATE TABLE 'author' (

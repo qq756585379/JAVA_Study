@@ -6,25 +6,40 @@
 
     <display-name>day15</display-name>
 
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.itheima.filter.EncodingFilter</filter-class>
+    </filter>
     <!--<filter>-->
-        <!--<filter-name>EncodingFilter</filter-name>-->
-        <!--<filter-class>com.itheima.filter.EncodingFilter</filter-class>-->
-    <!--</filter>-->
-    <!--<filter>-->
-        <!--<filter-name>RoleFilter</filter-name>-->
-        <!--<filter-class>com.itheima.filter.RoleFilter</filter-class>-->
+    <!--<filter-name>RoleFilter</filter-name>-->
+    <!--<filter-class>com.itheima.filter.RoleFilter</filter-class>-->
     <!--</filter>-->
 
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--<filter-mapping>-->
-        <!--<filter-name>EncodingFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>RoleFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
+    <!--<filter-name>RoleFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
 
-
+    <servlet>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.ModifyUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyAccount</servlet-name>
+        <servlet-class>com.itheima.servlet.MyAccount</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActiveServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.ActiveServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>CheckImgServlet</servlet-name>
         <servlet-class>com.itheima.servlet.CheckImgServlet</servlet-class>
@@ -35,62 +50,82 @@
     </servlet>
     <servlet>
         <servlet-name>ImageCodeServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.ImageCodeServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.ImageCodeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CkEmailServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.CkEmailServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.CkEmailServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BookListServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.BookListServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.BookListServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddBookServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.AddBookServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.AddBookServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FindBookByIdServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.FindBookByIdServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.FindBookByIdServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateBookServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.UpdateBookServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.UpdateBookServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DelBookServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.DelBookServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.DelBookServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>DelAllBooksServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.DelAllBooksServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+    <!--<servlet-name>DelAllBooksServlet</servlet-name>-->
+    <!--<servlet-class>com.itheima.servlet.DelAllBooksServlet</servlet-class>-->
+    <!--</servlet>-->
     <servlet>
         <servlet-name>SearchBooksServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.SearchBooksServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.SearchBooksServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PageServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.PageServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.PageServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>findBookInfoServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.FindBookInfoServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.FindBookInfoServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>SearchBookAJAXServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.SearchBookAJAXServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.SearchBookAJAXServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddCartServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.AddCartServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.AddCartServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ChangeNumServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.ChangeNumServlet</servlet-class>
+        <servlet-class>com.itheima.servlet.ChangeNumServlet</servlet-class>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>PageServlet</servlet-name>
+        <url-pattern>/pageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <url-pattern>/modifyUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyAccount</servlet-name>
+        <url-pattern>/myAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActiveServlet</servlet-name>
+        <url-pattern>/activeServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -123,17 +158,13 @@
         <servlet-name>DelBookServlet</servlet-name>
         <url-pattern>/servlet/delBookServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DelAllBooksServlet</servlet-name>
-        <url-pattern>/servlet/delAllBooksServlet</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>DelAllBooksServlet</servlet-name>-->
+    <!--<url-pattern>/servlet/delAllBooksServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>SearchBooksServlet</servlet-name>
         <url-pattern>/servlet/searchBooksServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PageServlet</servlet-name>
-        <url-pattern>/servlet/pageServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>findBookInfoServlet</servlet-name>
@@ -155,9 +186,5 @@
         <servlet-name>CheckImgServlet</servlet-name>
         <url-pattern>/imageCode2</url-pattern>
     </servlet-mapping>
-
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
 
 </web-app>

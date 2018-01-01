@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import java.io.IOException;
+import javax.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class EncodingFilter implements Filter {
         HttpServletRequest myRequest = new MyRequest(httpServletRequest);
 
         // 处理响应乱码
-        response.setContentType("text/html;charset=utf-8");
+        //response.setContentType("text/html;charset=utf-8");
 
         chain.doFilter(myRequest, response);
     }
@@ -43,6 +44,7 @@ class MyRequest extends HttpServletRequestWrapper {
     public MyRequest(HttpServletRequest request) {
         super(request);// super必须写
         this.request = request;
+        System.out.println("MyRequest---init");
     }
 
 /*
@@ -65,6 +67,7 @@ class MyRequest extends HttpServletRequestWrapper {
         if (method.equalsIgnoreCase("post")) {
             try {
                 request.setCharacterEncoding("utf-8");
+                System.out.println("request.getParameterMap = " + request.getParameterMap());
                 return request.getParameterMap();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

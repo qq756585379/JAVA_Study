@@ -47,7 +47,8 @@
 
                 <table cellspacing="0" class="infocontent">
                     <tr>
-                        <td><img src="images/ad/page_ad.jpg" width="666" height="89"/>
+                        <td>
+                            <img src="images/ad/page_ad.jpg" width="666" height="89"/>
                             <table width="100%" border="0" cellspacing="0">
                                 <tr>
                                     <td>
@@ -79,8 +80,7 @@
                                                                style="width:20px"
                                                                onclick="changeNum('${entry.key.id}','${entry.value-1 }','${entry.key.pnum }')">
 
-                                                        <input name="text" type="text" value="${entry.value }"
-                                                               style="width:40px;text-align:center"/>
+                                                        <input name="text" type="text" value="${entry.value }" style="width:40px;text-align:center"/>
                                                         <input type="button" value='+' style="width:20px"
                                                                onclick="changeNum('${entry.key.id}','${entry.value+1 }','${entry.key.pnum }')">
 

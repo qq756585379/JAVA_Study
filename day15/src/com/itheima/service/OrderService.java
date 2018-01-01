@@ -48,7 +48,6 @@ public class OrderService {
         return null;
     }
 
-
     public void modifyOrderState(String orderid) throws OrderException {
         try {
             orderDao.modifyOrderState(orderid);

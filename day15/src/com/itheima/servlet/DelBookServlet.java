@@ -1,6 +1,6 @@
-package com.itheima.web.servlet;
+package com.itheima.servlet;
 
-import com.itheima.service.BookServiceImpl;
+import com.itheima.service.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +15,8 @@ public class DelBookServlet extends HttpServlet {
 
         String id = request.getParameter("id");
 
-        BookServiceImpl bs = new BookServiceImpl();
-        bs.deleteBook(id);
+        ProductService ps = new ProductService();
+        ps.deleteBook(id);
 
         request.getRequestDispatcher("/servlet/bookListServlet").forward(request, response);
     }

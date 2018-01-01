@@ -47,7 +47,8 @@ public class ProductDao {
      */
     public void addBook(Product product) throws SQLException {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
-        qr.update("INSERT INTO products VALUES(?,?,?,?,?,?,?)", product.getId(), product.getName(), product.getPrice(), product.getPnum(), product.getCategory(), product.getDescription(), product.getImg_url());
+        qr.update("INSERT INTO products VALUES(?,?,?,?,?,?,?)", product.getId(), product.getName(),
+                product.getPrice(), product.getPnum(), product.getCategory(), product.getDescription(), product.getImg_url());
     }
 
     /**
@@ -69,7 +70,8 @@ public class ProductDao {
     public void updateBook(Product product) throws SQLException {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
         qr.update("update products set name=?,price=?,pnum=?,category=?,description=? where id=?",
-                product.getName(), product.getPrice(), product.getPnum(), product.getCategory(), product.getDescription(), product.getId());
+                product.getName(), product.getPrice(), product.getPnum(), product.getCategory(),
+                product.getDescription(), product.getId());
 
 
     }
@@ -111,8 +113,8 @@ public class ProductDao {
      * @return
      * @throws SQLException
      */
-    public List<Product> searchBooks(String id, String category, String name,
-                                     String minprice, String maxprice) throws SQLException {
+    public List<Product> searchBooks(String id, String category, String name, String minprice, String maxprice)
+            throws SQLException {
         QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
         String sql = "select * from products where 1=1";
         List list = new ArrayList();

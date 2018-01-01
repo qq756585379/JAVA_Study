@@ -1,4 +1,4 @@
-package com.itheima.web.servlet;
+package com.itheima.servlet;
 
 import java.io.IOException;
 
@@ -7,26 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.itheima.domain.Product;
+import com.itheima.service.ProductService;
 import org.apache.commons.beanutils.BeanUtils;
-
-import com.itheima.domain.Book;
-import com.itheima.service.BookServiceImpl;
 
 public class UpdateBookServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        System.out.println("---------------" + request.getParameterMap());
         request.setCharacterEncoding("UTF-8");
-        Book book = new Book();
+        Product book = new Product();
         try {
             BeanUtils.populate(book, request.getParameterMap());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        BookServiceImpl bs = new BookServiceImpl();
-        bs.updateBook(book);
+        ProductService ps = new ProductService();
+        ps.updateBook(book);
 
         request.getRequestDispatcher("/servlet/bookListServlet").forward(request, response);
     }
