@@ -10,7 +10,7 @@ import java.io.IOException;
 public class RoleFilter implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        System.out.println("RoleFilter---init");
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
@@ -30,8 +30,9 @@ public class RoleFilter implements Filter {
                 return;
             }
             chain.doFilter(request, response);
+        } else {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 
     public void destroy() {

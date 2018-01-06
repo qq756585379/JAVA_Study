@@ -1,6 +1,5 @@
 package com.itheima.servlet;
 
-import com.itheima.domain.Book;
 import com.itheima.domain.Product;
 
 import javax.servlet.ServletException;

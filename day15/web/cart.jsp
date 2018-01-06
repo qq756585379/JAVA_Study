@@ -32,6 +32,7 @@
         }
     </script>
 </head>
+
 <body class="main">
 
 <jsp:include page="head.jsp"/>
@@ -80,7 +81,8 @@
                                                                style="width:20px"
                                                                onclick="changeNum('${entry.key.id}','${entry.value-1 }','${entry.key.pnum }')">
 
-                                                        <input name="text" type="text" value="${entry.value }" style="width:40px;text-align:center"/>
+                                                        <input name="text" type="text" value="${entry.value }"
+                                                               style="width:40px;text-align:center"/>
                                                         <input type="button" value='+' style="width:20px"
                                                                onclick="changeNum('${entry.key.id}','${entry.value+1 }','${entry.key.pnum }')">
 
@@ -105,7 +107,7 @@
                                             </tr>
                                         </table>
                                         <div style="text-align:right; margin-top:10px">
-                                            <a href="${pageContext.request.contextPath}/showProductByPage">
+                                            <a href="${pageContext.request.contextPath}/pageServlet">
                                                 <img src="images/main/gwc_jx.gif" border="0"/>
                                             </a>
 

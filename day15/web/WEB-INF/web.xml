@@ -6,24 +6,32 @@
 
     <display-name>day15</display-name>
 
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>com.itheima.filter.EncodingFilter</filter-class>
     </filter>
-    <!--<filter>-->
-    <!--<filter-name>RoleFilter</filter-name>-->
-    <!--<filter-class>com.itheima.filter.RoleFilter</filter-class>-->
-    <!--</filter>-->
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>com.itheima.filter.RoleFilter</filter-class>
+    </filter>
 
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <!--<filter-mapping>-->
-    <!--<filter-name>RoleFilter</filter-name>-->
-    <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
 
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.OrderServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>ModifyUserServlet</servlet-name>
         <servlet-class>com.itheima.servlet.ModifyUserServlet</servlet-class>
@@ -105,7 +113,27 @@
         <servlet-name>ChangeNumServlet</servlet-name>
         <servlet-class>com.itheima.servlet.ChangeNumServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PayOnlineServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.PayOnlineServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CallBackServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.CallBackServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>CallBackServlet</servlet-name>
+        <url-pattern>/callBackServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PayOnlineServlet</servlet-name>
+        <url-pattern>/payOnlineServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PageServlet</servlet-name>
         <url-pattern>/pageServlet</url-pattern>

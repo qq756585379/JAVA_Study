@@ -6,11 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>order</title>
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <script type="text/javascript">
+        function _submitOrder() {
+            document.getElementById("orderForm").submit();
+        }
+    </script>
 </head>
+
 <body class="main">
 
 <jsp:include page="head.jsp"/>
@@ -26,13 +33,15 @@
                     <a href="cart.jsp">&nbsp;购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;订单
                 </div>
 
-                <form id="orderForm" action="#" method="post">
+                <form id="orderForm" action="${pageContext.request.contextPath }/order?method=createOrder"
+                      method="post">
                     <table cellspacing="0" class="infocontent">
                         <tr>
                             <td>
                                 <table width="100%" border="0" cellspacing="0">
                                     <tr>
-                                        <td><img src="images/main/buy2.gif" width="635" height="38"/>
+                                        <td>
+                                            <img src="images/main/buy2.gif" width="635" height="38"/>
                                             <p>您好：xxx先生！欢迎您来到商城结算中心</p>
                                         </td>
                                     </tr>
@@ -49,31 +58,37 @@
                                                 </tr>
                                             </table>
 
-                                            <table width="100%" border="0" cellspacing="0">
-                                                <tr>
-                                                    <td width="10%">001</td>
-                                                    <td width="40%">THINKING IN JAVA</td>
-                                                    <td width="10%">99</td>
-                                                    <td width="10%">计算机</td>
-                                                    <td width="10%">
-                                                        <input name="text" type="text"
-                                                               value="10" style="width:20px"
-                                                               readonly="readonly"/>
-                                                    </td>
-                                                    <td width="10%">990</td>
-                                                </tr>
-                                            </table>
+                                            <c:set var="count" value="0"></c:set>
+                                            <c:forEach items="${cart }" var="p" varStatus="vs">
+                                                <table width="100%" border="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="10%">${vs.count }</td>
+                                                        <td width="40%">${p.key.name }</td>
+                                                        <td width="10%">${p.key.price }</td>
+                                                        <td width="10%">${p.key.category }</td>
+                                                        <td width="10%">
+                                                            <input name="text" type="text"
+                                                                   value="${p.value }"
+                                                                   style="width:20px" readonly="readonly"/>
+                                                        </td>
+                                                        <td width="10%">${p.key.price*p.value }</td>
+                                                        <c:set var="count"
+                                                               value="${count+p.key.price*p.value }"></c:set>
+                                                    </tr>
+                                                </table>
+                                            </c:forEach>
 
                                             <table cellspacing="1" class="carttable">
                                                 <tr>
                                                     <td style="text-align:right; padding-right:40px;">
-                                                        <font style="color:#FF0000">合计：&nbsp;&nbsp;990元</font>
+                                                        <font style="color:#FF0000">合计：&nbsp;&nbsp;${count }元</font>
                                                     </td>
                                                 </tr>
+                                                <input type="hidden" name="money" value="${count }"/>
                                             </table>
 
                                             <p>
-                                                收货地址：<input name="receiverAddress" type="text" value=""
+                                                收货地址：<input name="receiverAddress" type="text" value="xxx"
                                                             style="width:350px"/>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a href="#"></a>
                                                 <br/> 收货人：&nbsp;&nbsp;&nbsp;&nbsp;
@@ -81,13 +96,13 @@
                                                        style="width:150px"/>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a href="#"></a>
                                                 <br/> 联系方式：<input type="text" name="receiverPhone"
-                                                                  value="xxx" style="width:150px"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                  value="13376275127" style="width:150px"/>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a href="#"></a>
                                             </p>
                                             <hr/>
                                             <p style="text-align:right">
                                                 <img src="images/main/gif53_029.gif" width="204" height="51"
-                                                     border="0" onclick="createOrder();"/>
+                                                     border="0" onclick="_submitOrder()"/>
                                             </p>
                                         </td>
                                     </tr>

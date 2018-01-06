@@ -21,10 +21,9 @@ public class OrderDao {
         QueryRunner qr = new QueryRunner();
         qr.update(ManagerThreadLocal.getConnection(),
                 "INSERT INTO orders VALUES(?,?,?,?,?,?,?,?)", order.getId(),
-                order.getMoney(), order.getReceiverAddress(), order
-                        .getReceiverName(), order.getReceiverPhone(), order
-                        .getPaystate(), order.getOrdertime(), order.getUser()
-                        .getId());
+                order.getMoney(), order.getReceiverAddress(), order.getReceiverName(),
+                order.getReceiverPhone(), order.getPaystate(),
+                order.getOrdertime(), order.getUser().getId());
     }
 
     // 根据用户id查询所有定单

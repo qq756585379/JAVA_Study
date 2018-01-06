@@ -53,7 +53,7 @@ public class OrderService {
             orderDao.modifyOrderState(orderid);
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new OrderException("ÐÞ¸ÄÊ§°Ü");
+            throw new OrderException("modifyOrderState--error");
         }
     }
 }

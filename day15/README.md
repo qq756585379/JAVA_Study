@@ -50,29 +50,29 @@ create table book(
 )character set utf8 collate utf8_general_ci;
 
 *********************订单表******************************
-CREATE TABLE `orders` (
-  `id` VARCHAR(100) ,
-  `money` DOUBLE ,
-  `receiverAddress` VARCHAR(255) ,
-  `receiverName` VARCHAR(20) ,
-  `receiverPhone` VARCHAR(20) ,
-  `paystate` INT(11) ,
-  `ordertime` TIMESTAMP ,
-  `user_id` INT(11) ,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+CREATE TABLE orders (
+  id VARCHAR(100) ,
+  money DOUBLE ,
+  receiverAddress VARCHAR(255) ,
+  receiverName VARCHAR(20) ,
+  receiverPhone VARCHAR(20) ,
+  paystate INT(11) ,
+  ordertime TIMESTAMP ,
+  user_id INT(11) ,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES user (id)
 )character set utf8 collate utf8_general_ci;
 
 *********************订单项表******************************
 
-CREATE TABLE `orderitem` (
-  `order_id` VARCHAR(100) ,
-  `product_id` VARCHAR(100),
-  `buynum` INT(11) ,
-  PRIMARY KEY (`order_id`,`product_id`),
-  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-)character set utf8 collate utf8_general_ci;
+CREATE TABLE orderitem (
+  order_id VARCHAR(100) ,
+  product_id VARCHAR(100),
+  buynum INT(11) ,
+  PRIMARY KEY (order_id,product_id),
+  FOREIGN KEY (order_id) REFERENCES orders (id),
+  FOREIGN KEY (product_id) REFERENCES products (id)
+);
 
 *********************************************************
 

@@ -1,6 +1,5 @@
 package com.itheima.util;
 
-import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

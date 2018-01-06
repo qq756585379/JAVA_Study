@@ -45,6 +45,9 @@ public class UserServlet extends BaseServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        System.out.println("username = " + username);
+        System.out.println("password = " + password);
+
         UserService us = new UserService();
         try {
             String path = "/index.jsp";
@@ -52,6 +55,7 @@ public class UserServlet extends BaseServlet {
             if ("admin".equals(user.getRole())) {
                 path = "/admin/login/home.jsp";
             }
+            System.out.println("path = " + path);
             request.getSession().setAttribute("user", user);
             request.getRequestDispatcher(path).forward(request, response);
         } catch (UserException e) {
