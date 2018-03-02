@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- setter方法注入
+        * 普通数据
+            <property name="" value="值">
+            等效
+            <property name="">
+                <value>值
+        * 引用数据
+            <property name="" ref="另一个bean">
+            等效
+            <property name="">
+                <ref bean="另一个bean"/>
+
+    -->
+    <bean id="personId" class="com.itheima.f_xml.b_setter.Person">
+        <property name="pname" value="阳志"></property>
+
+        <property name="age">
+            <value>1234</value>
+        </property>
+
+        <property name="homeAddr" ref="homeAddrId"></property>
+
+        <property name="companyAddr">
+            <ref bean="companyAddrId"/>
+        </property>
+
+    </bean>
+
+    <bean id="homeAddrId" class="com.itheima.f_xml.b_setter.Address">
+        <property name="addr" value="阜南"></property>
+        <property name="tel" value="911"></property>
+    </bean>
+
+    <bean id="companyAddrId" class="com.itheima.f_xml.b_setter.Address">
+        <property name="addr" value="北京八宝山"></property>
+        <property name="tel" value="120"></property>
+    </bean>
+
+</beans>

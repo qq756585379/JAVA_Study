@@ -29,19 +29,19 @@
                     <tr>
                         <td class="listtd">
                             <img src="images/main/miniicon.gif" width="9" height="6"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="${pageContext.request.contextPath }/findUserById?id=${user.id}">用户信息修改</a>
+                            <a href="${pageContext.request.contextPath }/user?method=findUserById&id=${user.id}">用户信息修改</a>
                         </td>
                     </tr>
                     <tr>
                         <td class="listtd">
                             <img src="images/main/miniicon.gif" width="9" height="6"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="orderlist.jsp">订单查询</a>
+                            <a href="${pageContext.request.contextPath }/order?method=findOrderByUserId">订单查询</a>
                         </td>
                     </tr>
                     <tr>
                         <td class="listtd">
                             <img src="images/main/miniicon.gif" width="9" height="6"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="${pageContext.request.contextPath }/logout">用戶退出</a>
+                            <a href="${pageContext.request.contextPath }/user?method=logout">用戶退出</a>
                         </td>
                     </tr>
                 </table>
