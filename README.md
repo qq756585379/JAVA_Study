@@ -111,3 +111,58 @@ SELECT * FROM account;
 ### day17 - 过滤器解决乱码问题，自动登录demo
 
 ### day19 - Uploadload/download
+
+### day21 - spring基础
+
+使用注解取代xml配置
+
+@Component取代 <bean class="">
+@Component("userServiceId")取代 <bean id="" class="">
+
+web开发提供3个@Component衍生注解
+
+1.@Repository("studentDaoId") ：dao层
+
+2.@Service ：Service层
+
+3.@Controller("studentActionId") ：Controller层
+
+依赖注入：
+```
+普通值：@Value("")
+引用值：
+		方式1：按照【类型】注入
+			@Autowired
+		方式2：按照【名称】注入1
+			@Autowired
+			@Qualifier("名称")
+		方式3：按照【名称】注入2
+			@Resource("名称")
+
+```
+生命周期
+
+	初始化：@PostConstruct
+	销毁：  @PreDestroy
+
+作用域
+
+	@Scope("prototype") 多例
+
+
+注解和xml混合使用
+```
+1.将所有的bean都配置xml中
+	<bean id="" class="">
+2.将所有的依赖都使用注解
+	@Autowired
+	默认不生效。为了生效，需要在xml配置：<context:annotation-config>
+
+总结：
+注解1：<context:component-scan base-package=" ">
+注解2：<context:annotation-config>
+1.一般情况两个注解不一起使用。
+2. “注解1”扫描含有注解（@Component 等）类，注入注解自动生效。
+   “注解2”只在xml和注解（注入）混合使用时，使注入注解生效。
+
+```

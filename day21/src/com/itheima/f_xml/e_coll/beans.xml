@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        集合的注入都是给<property>添加子标签
+            数组：<array>
+            List：<list>
+            Set：<set>
+            Map：<map> ，map存放k/v 键值对，使用<entry>描述
+            Properties：<props>  <prop key=""></prop>  【】
+
+        普通数据：<value>
+        引用数据：<ref>
+    -->
+    <bean id="collDataId" class="com.itheima.f_xml.e_coll.CollData">
+        <property name="arrayData">
+            <array>
+                <value>DS</value>
+                <value>DZD</value>
+                <value>屌丝</value>
+                <value>屌中屌</value>
+            </array>
+        </property>
+
+        <property name="listData">
+            <list>
+                <value>于嵩楠</value>
+                <value>曾卫</value>
+                <value>杨煜</value>
+                <value>曾小贤</value>
+            </list>
+        </property>
+
+        <property name="setData">
+            <set>
+                <value>停封</value>
+                <value>薄纸</value>
+                <value>关系</value>
+            </set>
+        </property>
+
+        <property name="mapData">
+            <map>
+                <entry key="jack" value="杰克"></entry>
+                <entry>
+                    <key>
+                        <value>rose</value>
+                    </key>
+                    <value>肉丝</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="propsData">
+            <props>
+                <prop key="高富帅">嫐</prop>
+                <prop key="白富美">嬲</prop>
+                <prop key="男屌丝">挊</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
