@@ -71,7 +71,7 @@
     <filter-mapping>
         <filter-name>MyFilter3</filter-name>
         <url-pattern>/*</url-pattern>
-        <!--默认是拦截REQUEST，如果想转发也拦截得配置INCLUDE-->
+        <!--默认是只拦截REQUEST，如果想拦截转发 得配置INCLUDE-->
         <dispatcher>INCLUDE</dispatcher>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
